@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">First</string>
     <string name="str1">Hello Kitty</string>
+    <string name="btn_lable1">ButtonA</string>
+    <string name="inp_hint">You can input</string>
+    <string name="lable_add1">+3 points</string>
+    <string name="lable_add2">+2 points</string>
+    <string name="lable_add3">+1 point</string>
+    <string name="btn_reset_lable">reset</string>
+    <string name="btn_dollor_lable">Dollar</string>
+    <string name="btn_euro_lable">Euro</string>
+    <string name="btn_won_lable">Won</string>
+    <string name="rmb_hint">Input RMB</string>
+    <string name="btn_opencfg_label">Config</string>
+    <string name="btn_save_label">Save</string>
+    <string name="menu_set_lable">Setting</string>
+    <string name="lable_open_list">OpenList</string>
+
 
 </resources>
