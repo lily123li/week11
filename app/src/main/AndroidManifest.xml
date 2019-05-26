@@ -15,18 +15,25 @@
         <activity android:name=".HelloActivity" />
         <activity android:name=".Work1Activity" />
         <activity android:name=".RateActivity">
+
+        </activity>
+        <activity android:name=".ConfigActivity" />
+        <activity android:name=".RateListActivity" />
+        <activity android:name=".MyListActivity"></activity>
+        <activity android:name=".MyList2Activity" />
+        <activity
+            android:name=".RateCalActivity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog" />
+        <activity android:name="com.show.seeVideo" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConfigActivity" />
-        <activity android:name=".RateListActivity" />
-        <activity android:name=".MyListActivity" >
-        </activity>
-        <activity android:name=".MyList2Activity" />
-        <activity android:name=".RateCalActivity" android:theme="@style/Base.Theme.AppCompat.Dialog"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
 </manifest>
