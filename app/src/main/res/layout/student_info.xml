@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".show.student.ShowStudentActivity">
+
+    <TextView
+        android:id="@+id/id2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="left|center_vertical"
+        android:text="学员ID："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_id"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/name2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="left|center_vertical"
+        android:text="姓名："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_name"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/age2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="left|center_vertical"
+        android:text="年龄："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_age"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/sex2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="left|center_vertical"
+        android:text="性别："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_sex"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/like2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="left|center_vertical"
+        android:text="爱好："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_marginRight="52dip"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/contact2_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="center_vertical|left"
+        android:text="联系电话："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical|left" />
+
+    <TextView
+        android:id="@+id/train2_time_text_id"
+        android:layout_width="80dip"
+        android:layout_height="40dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="center_vertical|left"
+        android:text="入学日期"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_info_train_date"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical|left" />
+
+    <Button
+        android:id="@+id/back_to_list_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="返回列表界面"></Button>
+
+
+</LinearLayout>
