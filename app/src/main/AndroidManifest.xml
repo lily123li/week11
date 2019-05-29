@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".FrameActivity">
+        <activity android:name=".FrameActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ShowStudentActivity" />
+        <activity android:name=".AddStudentActivity"></activity>
+        <activity android:name=".StudentSearch">
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".StudentListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,4 +24,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
