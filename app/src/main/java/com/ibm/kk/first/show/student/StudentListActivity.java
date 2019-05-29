@@ -23,9 +23,9 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import com.ibm.kk.first.R;
-import com.ibm.kk.first.Student.Student;
-import com.ibm.kk.first.StudentDBHelper.StudentDBHelper;
-import com.ibm.kk.first.TableContanst.TableContanst;
+import com.ibm.kk.first.Student;
+import com.ibm.kk.first.StudentDBHelper;
+import com.ibm.kk.first.TableContanst;
 
 import java.util.ArrayList;
 import java.util.List;

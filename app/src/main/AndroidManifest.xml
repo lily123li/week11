@@ -17,7 +17,13 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".HelloActivity" />
         <activity android:name=".Work1Activity" />
-        <activity android:name=".RateActivity" />
+        <activity android:name=".RateActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".ConfigActivity" />
         <activity android:name=".RateListActivity" />
         <activity android:name=".MyListActivity" />

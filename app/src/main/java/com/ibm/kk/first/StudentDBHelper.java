@@ -1,11 +1,9 @@
-package com.ibm.kk.first.StudentDBHelper;
+package com.ibm.kk.first;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import com.ibm.kk.first.TableContanst.TableContanst;
 
 
 public class StudentDBHelper extends SQLiteOpenHelper {

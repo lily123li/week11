@@ -13,8 +13,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ibm.kk.first.R;
-import com.ibm.kk.first.StudentDBHelper.StudentDBHelper;
-import com.ibm.kk.first.TableContanst.TableContanst;
+import com.ibm.kk.first.StudentDBHelper;
+import com.ibm.kk.first.TableContanst;
 
 public class StudentSearch extends Activity implements AdapterView.OnClickListener  {
     private EditText nameText;

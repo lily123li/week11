@@ -1,4 +1,4 @@
-package com.ibm.kk.first.TableContanst;
+package com.ibm.kk.first;
 
 public class TableContanst {
     public static final String STUDENT_TABLE = "student";

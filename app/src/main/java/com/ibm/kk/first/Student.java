@@ -1,4 +1,4 @@
-package com.ibm.kk.first.Student;
+package com.ibm.kk.first;
 
 import java.io.Serializable;
 
