@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="40dip"
+    android:layout_width="80dip">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/delete"
+            android:icon="@drawable/timg5"
+            android:title="删除学员信息"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/look"
+            android:icon="@drawable/timg5"
+            android:title="详细信息"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/write"
+            android:icon="@drawable/timg5"
+            android:title="修改学员信息"
+            app:showAsAction="never" />
+    </group>
+</menu>
