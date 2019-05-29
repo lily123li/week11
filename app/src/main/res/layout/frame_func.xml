@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/funcTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="学院信息"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/colorOrange1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView android:id="@+id/aca_id"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical|left"
+        android:textColor="@color/colorOrange2"
+        android:textSize="20sp"
+        android:text="编号："      />
+
+    <TextView android:id="@+id/ac_name"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorOrange2"
+        android:gravity="center_vertical|left"
+        android:textSize="20sp"
+        android:text="名称："     />
+
+    <TextView android:id="@+id/aca_number"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorOrange2"
+        android:gravity="center_vertical|left"
+        android:textSize="20sp"
+        android:text="学生数量："     />
+
+    <TextView android:id="@+id/aca_add"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorOrange2"
+        android:gravity="center_vertical|left"
+        android:textSize="20sp"
+        android:text="办公室地址："      />
+
+    <TextView android:id="@+id/aca_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorOrange2"
+        android:gravity="center_vertical|left"
+        android:textSize="20sp"
+        android:text="联系电话："     />
+
+    <ImageView
+        android:id="@+id/aca_imageView"
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="center"
+        android:src="@drawable/pen2"/>
+
+</LinearLayout>
