@@ -12,6 +12,7 @@
         android:background="@drawable/pen4" />
     <TextView android:id="@+id/tv_pro_id"
         android:layout_width="fill_parent"
+        android:layout_marginLeft="6dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
@@ -24,11 +25,13 @@
     <TextView android:id="@+id/tv_pro_num"
         android:layout_width="fill_parent"
         android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
 
     <TextView android:id="@+id/tv_pro_period"
         android:layout_width="fill_parent"
+        android:layout_marginLeft="12dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
