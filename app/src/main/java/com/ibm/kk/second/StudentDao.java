@@ -21,10 +21,10 @@ public class StudentDao {
         ContentValues values = new ContentValues();
         values.put(TableContanst.StudentColumns.NAME, s.getName());
         values.put(TableContanst.StudentColumns.NUM, s.getNum());
-        values.put(TableContanst.StudentColumns.MAJOR, s.getMajor());
-        values.put(TableContanst.StudentColumns.SEX, s.getSex());
-        values.put(TableContanst.StudentColumns.LIKES, s.getLike());
-        values.put(TableContanst.StudentColumns.PHONE_NUMBER, s.getPhoneNumber());
+        values.put(TableContanst.StudentColumns.PERIOD, s.getPeriod());
+        values.put(TableContanst.StudentColumns.GRADE, s.getGrade());
+        values.put(TableContanst.StudentColumns.TYPE, s.getType());
+        values.put(TableContanst.StudentColumns.PLACE, s.getPlace());
         values.put(TableContanst.StudentColumns.TRAIN_DATE, s.getTrainDate());
         values.put(TableContanst.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
         return dbHelper.getWritableDatabase().insert(TableContanst.STUDENT_TABLE, null, values);
@@ -41,10 +41,10 @@ public class StudentDao {
         ContentValues values = new ContentValues();
         values.put(TableContanst.StudentColumns.NAME, s.getName());
         values.put(TableContanst.StudentColumns.NUM, s.getNum());
-        values.put(TableContanst.StudentColumns.MAJOR, s.getMajor());
-        values.put(TableContanst.StudentColumns.SEX, s.getSex());
-        values.put(TableContanst.StudentColumns.LIKES, s.getLike());
-        values.put(TableContanst.StudentColumns.PHONE_NUMBER, s.getPhoneNumber());
+        values.put(TableContanst.StudentColumns.PERIOD, s.getPeriod());
+        values.put(TableContanst.StudentColumns.GRADE, s.getGrade());
+        values.put(TableContanst.StudentColumns.TYPE, s.getType());
+        values.put(TableContanst.StudentColumns.PLACE, s.getPlace());
         values.put(TableContanst.StudentColumns.TRAIN_DATE, s.getTrainDate());
         values.put(TableContanst.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
         return dbHelper.getWritableDatabase().update(TableContanst.STUDENT_TABLE, values,
@@ -64,14 +64,14 @@ public class StudentDao {
             map.put(TableContanst.StudentColumns.NAME, name);
             int num = cursor.getInt(cursor.getColumnIndex(TableContanst.StudentColumns.NUM));
             map.put(TableContanst.StudentColumns.NUM, num);
-            String major = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.MAJOR));
-            map.put(TableContanst.StudentColumns.MAJOR, major);
-            String sex = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.SEX));
-            map.put(TableContanst.StudentColumns.SEX, sex);
-            String likes = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.LIKES));
-            map.put(TableContanst.StudentColumns.LIKES, likes);
-            String phone_number = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.PHONE_NUMBER));
-            map.put(TableContanst.StudentColumns.PHONE_NUMBER, phone_number);
+            String period = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.PERIOD));
+            map.put(TableContanst.StudentColumns.PERIOD, period);
+            String grade = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.GRADE));
+            map.put(TableContanst.StudentColumns.GRADE, grade);
+            String type = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.TYPE));
+            map.put(TableContanst.StudentColumns.TYPE, type);
+            String place = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.PLACE));
+            map.put(TableContanst.StudentColumns.PLACE, place);
             String train_date = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.TRAIN_DATE));
             map.put(TableContanst.StudentColumns.TRAIN_DATE, train_date);
             String modify_time = cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.MODIFY_TIME));
@@ -104,21 +104,21 @@ public class StudentDao {
     public void closeDB() {
         dbHelper.close();     }   //自定义的方法通过View和Id得到一个student对象
     public Student getStudentFromView(View view, long id) {
-        TextView nameView = (TextView) view.findViewById(R.id.tv_stu_name);
-        TextView numView = (TextView) view.findViewById(R.id.tv_stu_num);
-        TextView majorView = (TextView) view.findViewById(R.id.tv_stu_major);
-        TextView sexView = (TextView) view.findViewById(R.id.tv_stu_sex);
-        TextView likeView = (TextView) view.findViewById(R.id.tv_stu_likes);
-        TextView phoneView = (TextView) view.findViewById(R.id.tv_stu_phone);
-        TextView dataView = (TextView) view.findViewById(R.id.tv_stu_traindate);
+        TextView nameView = (TextView) view.findViewById(R.id.tv_pro_name);
+        TextView numView = (TextView) view.findViewById(R.id.tv_pro_num);
+        TextView periodView = (TextView) view.findViewById(R.id.tv_pro_period);
+        TextView gradeView = (TextView) view.findViewById(R.id.tv_pro_grade);
+        TextView typeView = (TextView) view.findViewById(R.id.tv_pro_type);
+        TextView placeView = (TextView) view.findViewById(R.id.tv_pro_place);
+        TextView dataView = (TextView) view.findViewById(R.id.tv_pro_traindate);
         String name = nameView.getText().toString();
-        int num = Integer.parseInt(numView.getText().toString());
-        String sex = sexView.getText().toString();
-        String major = majorView.getText().toString();
-        String like = likeView.getText().toString();
-        String phone = phoneView.getText().toString();
+        String num = numView.getText().toString();
+        String grade = gradeView.getText().toString();
+        String period = periodView.getText().toString();
+        String type = typeView.getText().toString();
+        String place = placeView.getText().toString();
         String data = dataView.getText().toString();
-        Student student = new Student(id, name, num, major, sex, like, phone, data,null);
+        Student student = new Student(id, name, num, period, grade, type, place, data,null);
         return
                 student;
     }

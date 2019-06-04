@@ -10,13 +10,13 @@
     <string name="lable_second">Second Page</string>
     <string name="lable_third">Third Page</string>
 
-    <string name="information_write">学员信息修改</string>
-    <string name="button1">男</string>
-    <string name="button2">女</string>
-    <string name="box1">唱歌</string>
-    <string name="box2">绘画</string>
-    <string name="box3">运动</string>
-    <string name="box4">读书</string>
-    <string name="myButton">添加学员信息</string>
-    <string name="spinner">请选择</string>
+    <string name="information_write">信息修改</string>
+    <string name="button1">校级以上</string>
+    <string name="button2">校级以下</string>
+    <string name="box1">思想政治教育类</string>
+    <string name="box2">科技学术与创新创业类</string>
+    <string name="box3">社会实践与志愿服务类</string>
+    <string name="box4">文体艺术与身心发展类</string>
+    <string name="myButton">添加信息</string>
+
 </resources>

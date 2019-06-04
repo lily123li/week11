@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="5dip"      >
-        <TextView android:id="@+id/tv_stu_text_id"
+        <TextView android:id="@+id/tv_pro_text_id"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
@@ -19,36 +19,35 @@
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
             android:text="编号："     />
-        <TextView android:id="@+id/tv_stu_id"
+        <TextView android:id="@+id/tv_pro_id"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:text="待分配"
-            android:layout_toRightOf="@id/tv_stu_text_id"
+            android:layout_toRightOf="@id/tv_pro_text_id"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/tv_stu_text_id"
+            android:layout_alignTop="@id/tv_pro_text_id"
             android:gravity="center"
-            android:background="#ffffff"
-            android:textColor="#000000"
             android:textSize="16sp"      />
         <TextView android:id="@+id/tv_name_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
-            android:layout_below="@id/tv_stu_text_id"
-            android:layout_alignLeft="@id/tv_stu_text_id"
+            android:layout_below="@id/tv_pro_text_id"
+            android:layout_alignLeft="@id/tv_pro_text_id"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
-            android:text="姓名："      />
+            android:text="项目："      />
         <EditText android:id="@+id/et_name"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:layout_toRightOf="@id/tv_name_text"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/tv_name_text"
-            android:hint="请输入姓名，如Adam"
+            android:hint="请输入项目名称"
             android:inputType="textPersonName"
             android:paddingLeft="20dip"/>
+
         <TextView android:id="@+id/tv_num_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
@@ -57,137 +56,144 @@
             android:layout_below="@id/tv_name_text"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
-            android:text="学号："      />
+            android:text="次数："      />
+
+
         <EditText android:id="@+id/et_num"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:layout_toRightOf="@id/tv_num_text"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/tv_num_text"
-            android:hint="请输入学号"
+            android:hint="请输入次数"
             android:paddingLeft="20dip"
             android:maxLength="3"
             android:inputType="number"      />
 
-        <TextView android:id="@+id/tv_major_text"
+
+        <TextView android:id="@+id/tv_period_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
-            android:layout_below="@id/et_num"
-            android:layout_alignLeft="@id/tv_stu_text_id"
+            android:layout_below="@id/tv_num_text"
+            android:layout_alignLeft="@id/tv_pro_text_id"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
-            android:text="专业年级："      />
+            android:text="学时："      />
 
-        <EditText android:id="@+id/et_major"
+        <EditText android:id="@+id/et_period"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
-            android:layout_toRightOf="@id/tv_major_text"
+            android:layout_toRightOf="@id/tv_period_text"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/tv_major_text"
-            android:hint="如2017级信管"
+            android:layout_alignTop="@id/tv_period_text"
+            android:hint="请输入学时"
             android:paddingLeft="20dip"/>
 
-        <TextView android:id="@+id/tv_sex_text"
+        <TextView android:id="@+id/tv_grade_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
-            android:layout_below="@id/tv_major_text"
-            android:layout_alignLeft="@id/tv_stu_text_id"
+            android:layout_below="@id/tv_period_text"
+            android:layout_alignLeft="@id/tv_period_text"
             android:layout_marginRight="5dip"
             android:layout_marginBottom="5dip"
-            android:text="性别："
+            android:text="等级："
             android:textSize="16sp"      />
         <RadioGroup
-            android:id="@+id/rg_sex"
+            android:id="@+id/rg_grade"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:orientation="horizontal"
-            android:layout_toRightOf="@id/tv_sex_text"
+            android:layout_toRightOf="@id/tv_grade_text"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/tv_sex_text"         >
+            android:layout_alignTop="@id/tv_grade_text"         >
             <RadioButton
-                android:id="@+id/rb_sex_male"
+                android:id="@+id/rb_grade1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="男"
+                android:text="校级以上"
                 android:textSize="16sp"        />
             <RadioButton android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="女"
-                android:id="@+id/rb_sex_female"
+                android:text="校级以下"
+                android:id="@+id/rb_grade2"
                 android:layout_weight="1"
                 android:textSize="16sp">
             </RadioButton>
         </RadioGroup>
-        <TextView  android:id="@+id/tv_likes_text"
+        <TextView  android:id="@+id/tv_type_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
-            android:layout_below="@id/rg_sex"
-            android:layout_alignLeft="@id/tv_sex_text"
+            android:layout_below="@id/rg_grade"
+            android:layout_alignLeft="@id/tv_grade_text"
             android:layout_marginRight="5dip"
             android:layout_marginBottom="5dip"
-            android:text="爱好："
+            android:text="类型："
             android:textSize="16sp"     />
+
         <CheckBox    android:id="@+id/box1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv_likes_text"
-            android:layout_below="@+id/rg_sex"
-            android:text="@string/box1"    ></CheckBox>
+            android:layout_toRightOf="@id/tv_type_text"
+            android:layout_below="@+id/rg_grade"
+            android:text="@string/box1"    >
+
+        </CheckBox>
+
         <CheckBox    android:id="@+id/box2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/box1"
-            android:layout_below="@+id/rg_sex"
+            android:layout_toRightOf="@id/tv_type_text"
+            android:layout_below="@id/box1"
             android:text="@string/box2">
 
         </CheckBox>
         <CheckBox     android:id="@+id/box3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/box2"
-            android:layout_below="@+id/rg_sex"
+            android:layout_toRightOf="@id/tv_type_text"
+            android:layout_below="@id/box2"
             android:text="@string/box3"     >
         </CheckBox>
         <CheckBox     android:id="@+id/box4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/box3"
-            android:layout_below="@+id/rg_sex"
+            android:layout_toRightOf="@id/tv_type_text"
+            android:layout_below="@id/box3"
             android:text="@string/box4"     >
         </CheckBox>
-        <TextView android:id="@+id/tv_phone_text"
+
+        <TextView android:id="@+id/tv_place_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
-            android:layout_below="@id/tv_likes_text"
+            android:layout_below="@+id/box4"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
-            android:text="联系电话："     />
-        <EditText android:id="@+id/et_phone"
+            android:text="地点："     />
+        <EditText android:id="@+id/et_place"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
-            android:layout_toRightOf="@id/tv_phone_text"
+            android:layout_toRightOf="@id/tv_place_text"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/tv_phone_text"
-            android:hint="请输入手机号"
-            android:paddingLeft="20dip"
+            android:layout_alignTop="@id/tv_place_text"
+            android:hint="请输入活动地点"
             android:inputType="phone"
-            android:maxLength="11"     />
+            android:paddingLeft="20dip" />
         <TextView android:id="@+id/tv_traindate_text"
             android:layout_width="80dip"
             android:layout_height="40dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
-            android:layout_below="@id/tv_phone_text"
+            android:layout_below="@id/tv_place_text"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
-            android:text="活动日期："              />
+            android:text="日期："              />
         <EditText android:id="@+id/et_traindate"
             android:layout_width="fill_parent"
             android:layout_height="40dip"
@@ -203,7 +209,7 @@
             android:layout_height="wrap_content"
             android:text="保存"
             android:layout_below="@id/tv_traindate_text"
-            android:layout_alignRight="@id/rg_sex">
+            android:layout_alignRight="@id/rg_grade">
         </Button>
         <Button android:id="@+id/btn_clear"
             android:layout_width="wrap_content"

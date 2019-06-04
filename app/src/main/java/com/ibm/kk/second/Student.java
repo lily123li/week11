@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class Student implements Serializable {
     private long id;
     private String name;
-    private int num;
-    private String sex;
-    private String major;
-    private String like;
-    private String phoneNumber;
+    private String num;
+    private String grade;
+    private String period;
+    private String type;
+    private String place;
     private String trainDate;
     private String modifyDateTime;
 
@@ -17,28 +17,28 @@ public class Student implements Serializable {
         super();
     }
 
-    public Student(long id, String name, int num, String major,String sex, String like, String phoneNumber,
+    public Student(long id, String name, String num, String period, String grade, String type, String place,
                    String trainDate, String modifyDateTime) {
         super();
         this.id = id;
         this.name = name;
         this.num = num;
-        this.major = major;
-        this.sex = sex;
-        this.like = like;
-        this.phoneNumber = phoneNumber;
+        this.period = period;
+        this.grade = grade;
+        this.type = type;
+        this.place = place;
         this.trainDate = trainDate;
         this.modifyDateTime = modifyDateTime;
     }
-    public Student(String name, int num, String major, String sex, String like, String phoneNumber,
+    public Student(String name, String num, String period, String grade, String type, String place,
                    String trainDate, String modifyDateTime) {
         super();
         this.name = name;
         this.num = num;
-        this.major = major;
-        this.sex = sex;
-        this.like = like;
-        this.phoneNumber = phoneNumber;
+        this.period = period;
+        this.grade = grade;
+        this.type = type;
+        this.place = place;
         this.trainDate = trainDate;
         this.modifyDateTime = modifyDateTime;
     }
@@ -55,33 +55,33 @@ public class Student implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public int getNum() {
+    public String getNum() {
         return num;
     }
-    public void setNum(int num) {
+    public void setNum(String num) {
         this.num = num;
     }
-    public String getSex() {
-        return sex;     }
-    public void setMajor(String major) {
-        this.major = major;
+    public String getGrade() {
+        return grade;     }
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
-    public String getMajor() {
-        return major;     }
-    public void setSex(String sex) {
-        this.sex = sex;
+    public String getPeriod() {
+        return period;     }
+    public void setPeriod(String period) {
+        this.period = period;
     }
-    public String getLike() {
-        return like;
+    public String getType() {
+        return type;
     }
-    public void setLike(String like) {
-        this.like = like;
+    public void setType(String type) {
+        this.type = type;
     }
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPlace() {
+        return place;
     }
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;     }
+    public void setPlace(String place) {
+        this.place = place;     }
     public String getTrainDate() {
         return trainDate;
     }

@@ -22,7 +22,7 @@ public class StudentDBHelper extends SQLiteOpenHelper {
         Log.v(TAG, "onCreate");
         db.execSQL("create table "
                 + TableContanst.STUDENT_TABLE                 + "(_id Integer primary key AUTOINCREMENT,"
-                + "name char,num integer, major char, sex char, likes char, phone_number char,train_date date, "
+                + "name char,num char, period char, grade char, type char, place char,train_date date, "
                 + "modify_time DATETIME)");     }
     //更新数据库
     @Override

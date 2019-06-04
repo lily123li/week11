@@ -8,8 +8,7 @@
         android:id="@+id/et_srarch"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入学员姓名"
-        android:inputType="textPersonName" />
+        android:hint="请输入项目名称" />
 
     <Button
         android:id="@+id/bn_sure_search"
@@ -36,7 +35,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="编号   姓 名   学号   专业年级   性 别    爱 好    电 话    日 期" />
+            android:text="编号   项目   次数   学时   等级    类型    地点    日期" />
 
         <ListView
             android:id="@+id/searchListView"

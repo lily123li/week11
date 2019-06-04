@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -71,6 +70,10 @@ public class StudentListActivity extends ListActivity implements
         listView.setOnItemClickListener(this);
         listView.setOnItemLongClickListener(this);
         listView.setOnCreateContextMenuListener(this);
+
+
+
+
 
     }
     // 调用load()方法将数据库中的所有记录显示在当前页面
@@ -201,14 +204,14 @@ public class StudentListActivity extends ListActivity implements
                 cursor, new String[] { TableContanst.StudentColumns.ID,
                 TableContanst.StudentColumns.NAME,
                 TableContanst.StudentColumns.NUM,
-                TableContanst.StudentColumns.MAJOR,
-                TableContanst.StudentColumns.SEX,
-                TableContanst.StudentColumns.LIKES,
-                TableContanst.StudentColumns.PHONE_NUMBER,
+                TableContanst.StudentColumns.PERIOD,
+                TableContanst.StudentColumns.GRADE,
+                TableContanst.StudentColumns.TYPE,
+                TableContanst.StudentColumns.PLACE,
                 TableContanst.StudentColumns.TRAIN_DATE }, new int[] {
-                R.id.tv_stu_id, R.id.tv_stu_name, R.id.tv_stu_num,R.id.tv_stu_major,
-                R.id.tv_stu_sex, R.id.tv_stu_likes, R.id.tv_stu_phone,
-                R.id.tv_stu_traindate });
+                R.id.tv_pro_id, R.id.tv_pro_name, R.id.tv_pro_num,R.id.tv_pro_period,
+                R.id.tv_pro_grade, R.id.tv_pro_type, R.id.tv_pro_place,
+                R.id.tv_pro_traindate });
         listView.setAdapter(adapter);
     }
 

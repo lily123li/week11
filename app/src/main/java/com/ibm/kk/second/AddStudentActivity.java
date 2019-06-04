@@ -26,9 +26,9 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     private static final int DATE_PICKER_ID = 1;
     private TextView idText;
     private EditText nameText;
-    private EditText majorText;
+    private EditText periodText;
     private EditText numText;
-    private EditText phoneText;
+    private EditText placeText;
     private EditText dataText;
     private RadioGroup group;
     private RadioButton button1;
@@ -48,15 +48,15 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_student);
-        idText = (TextView) findViewById(R.id.tv_stu_id);
+        idText = (TextView) findViewById(R.id.tv_pro_id);
         nameText = (EditText) findViewById(R.id.et_name);
         numText = (EditText) findViewById(R.id.et_num);
-        majorText = (EditText) findViewById(R.id.et_major);
-        button1 = (RadioButton) findViewById(R.id.rb_sex_female);
-        button2 = (RadioButton) findViewById(R.id.rb_sex_male);
-        phoneText = (EditText) findViewById(R.id.et_phone);
+        periodText = (EditText) findViewById(R.id.et_period);
+        button1 = (RadioButton) findViewById(R.id.rb_grade1);
+        button2 = (RadioButton) findViewById(R.id.rb_grade2);
+        placeText = (EditText) findViewById(R.id.et_place);
         dataText = (EditText) findViewById(R.id.et_traindate);
-        group = (RadioGroup) findViewById(R.id.rg_sex);
+        group = (RadioGroup) findViewById(R.id.rg_grade);
         box1 = (CheckBox) findViewById(R.id.box1);
         box2 = (CheckBox) findViewById(R.id.box2);
         box3 = (CheckBox) findViewById(R.id.box3);
@@ -69,7 +69,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         dataText.setOnClickListener(this);
         checkIsAddStudent();
         }
-    // 检查此时Activity是否用于添加学员信息
+    // 检查此时Activity是否用于添加项目信息
     private void checkIsAddStudent() {
         Intent intent = getIntent();
         Serializable serial = intent.getSerializableExtra(TableContanst.STUDENT_TABLE);
@@ -82,33 +82,33 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             showEditUI(s);
         }
     }
-    //显示学员信息更新的UI104
+    //显示项目信息更新
     private void showEditUI(Student student) {
         // 先将Student携带的数据还原到student的每一个属性中去
         student_id = student.getId();
         String name = student.getName();
-        int num = student.getNum();
-        String major = student.getMajor();
-        String phone = student.getPhoneNumber();
+        String num = student.getNum();
+        String period = student.getPeriod();
+        String place = student.getPlace();
         String data = student.getTrainDate();
-        String like = student.getLike();
-        String sex = student.getSex();
-        if (sex.toString().equals("男")) {
+        String type = student.getType();
+        String grade = student.getGrade();
+        if (grade.toString().equals("校级以上")) {
             button2.setChecked(true);
-        } else if (sex.toString().equals("女")) {
+        } else if (grade.toString().equals("校级以下")) {
             button1.setChecked(true);
         }
-        if (like != null && !"".equals(like)) {
-            if (box1.getText().toString().indexOf(like) >= 0) {
+        if (type != null && !"".equals(type)) {
+            if (box1.getText().toString().indexOf(type) >= 0) {
                 box1.setChecked(true);
             }
-            if (box2.getText().toString().indexOf(like) >= 0) {
+            if (box2.getText().toString().indexOf(type) >= 0) {
                 box2.setChecked(true);
             }
-            if (box3.getText().toString().indexOf(like) >= 0) {
+            if (box3.getText().toString().indexOf(type) >= 0) {
                 box3.setChecked(true);
             }
-            if (box4.getText().toString().indexOf(like) >= 0) {
+            if (box4.getText().toString().indexOf(type) >= 0) {
                 box4.setChecked(true);
             }
         }
@@ -116,8 +116,8 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         idText.setText(student_id + "");
         nameText.setText(name + "");
         numText.setText(num + "");
-        majorText.setText(major + "");
-        phoneText.setText(phone + "");
+        periodText.setText(period + "");
+        placeText.setText(place + "");
         dataText.setText(data + "");
         setTitle("学员信息更新");
         restoreButton.setText("更新");
@@ -158,8 +158,8 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     private void clearUIData() {
         nameText.setText("");
         numText.setText("");
-        majorText.setText("");
-        phoneText.setText("");
+        periodText.setText("");
+        placeText.setText("");
         dataText.setText("");
         box1.setChecked(false);
         box2.setChecked(false);
@@ -168,42 +168,42 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     //      收集界面输入的数据，并将封装成Student对象
     private Student getStudentFromUI() {
         String name = nameText.getText().toString();
-        int num = Integer.parseInt(numText.getText().toString());
-        String sex = ((RadioButton) findViewById(group
+        String num = numText.getText().toString();
+        String grade = ((RadioButton) findViewById(group
                 .getCheckedRadioButtonId())).getText().toString();
-        String likes = "";
-        if (box1.isChecked()) { // basketball, football football
-            likes += box1.getText();
+        String type = "";
+        if (box1.isChecked()) {
+            type += box1.getText();
         }
         if (box2.isChecked()) {
-            if (likes.equals("")) {
-                likes += box2.getText();
+            if (type.equals("")) {
+                type += box2.getText();
             } else {
-                likes += "," + box2.getText();
+                type += "," + box2.getText();
             }
-            if (likes.equals("")) {
-                likes += box3.getText();
+            if (type.equals("")) {
+                type += box3.getText();
             } else {
-                likes += "," + box3.getText();
+                type += "," + box3.getText();
             }
-            if (likes.equals("")) {
-                likes += box4.getText();
+            if (type.equals("")) {
+                type += box4.getText();
             } else {
-                likes += "," + box4.getText();
+                type += "," + box4.getText();
             }
         }
         String trainDate = dataText.getText().toString();
-        String major = majorText.getText().toString();
-        String phoneNumber = phoneText.getText().toString();
+        String period = periodText.getText().toString();
+        String place = placeText.getText().toString();
         String modifyDateTime = getCurrentDateTime();
-        Student s=new Student(name, num, major, sex, likes, phoneNumber, trainDate, modifyDateTime);
+        Student s=new Student(name, num, period, grade, type, place, trainDate, modifyDateTime);
         if (!isAdd) {
             s.setId(Integer.parseInt(idText.getText().toString()));
             dao.deleteStudentById(student_id);
         }
         return s;
     }
-    //      * 得到当前的日期时间
+          //* 得到当前的日期时间
     private String getCurrentDateTime() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return format.format(new Date());
@@ -217,21 +217,21 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     private boolean checkUIInput() { // name, age, sex
         String name = nameText.getText().toString();
         String num = numText.getText().toString();
-        String major = majorText.getText().toString();
+        String period = periodText.getText().toString();
         int id = group.getCheckedRadioButtonId();
         String message = null;
         View invadView = null;
         if (name.trim().length() == 0) {
             message = "请输入姓名！";
             invadView = nameText;
+        }  else if (period.trim().length() == 0) {
+            message = "请输入学时！";
+            invadView = periodText;
         } else if (num.trim().length() == 0) {
-            message = "请输入学号！";
+            message = "请输入次数！";
             invadView = numText;
-        } else if (major.trim().length() == 0) {
-            message = "请输入专业年级！";
-            invadView = majorText;
         } else if (id == -1) {
-            message = "请选择性别！";
+            message = "请选择等级！";
         }
         if (message != null) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

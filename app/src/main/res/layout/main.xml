@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <RelativeLayout android:id="@+id/RelativeLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button android:id="@+id/bn_search_id"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="搜索"
-            android:gravity="center_vertical" />
+            android:gravity="center" />
         <Button android:gravity="center"
-            android:text="添加学员信息"
+            android:text="添加"
             android:id="@+id/btn_add_student"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/bn_search_id"
             android:layout_toLeftOf="@+id/bn_select" />
-        <Button  android:gravity="center_vertical"
+        <Button  android:gravity="center"
             android:text="选择"
             android:id="@+id/bn_select"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"></Button>
     </RelativeLayout>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="      编号         姓 名         学号         性 别        "
-        />
+        android:text="           编号            项目         次数          学时            等级 "
+        android:textAppearance="@style/TextAppearance.AppCompat.Tooltip" />
+
 
     <ListView
         android:id="@android:id/list"
