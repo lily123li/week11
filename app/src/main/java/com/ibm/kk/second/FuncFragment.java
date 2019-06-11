@@ -1,13 +1,16 @@
 package com.ibm.kk.second;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class FuncFragment extends Fragment {
+public class FuncFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -18,5 +21,7 @@ public class FuncFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         TextView tv = (TextView)getView().findViewById(R.id.funcTextView1);
         //tv.setText("这是功能页面");
+
     }
+
 }
