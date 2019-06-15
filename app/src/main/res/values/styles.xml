@@ -5,8 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorButtonNormal">@android:color/holo_orange_light</item>
+        <item name="colorAccent">@color/colorPink2</item>
+        <item name="colorButtonNormal">@color/colorPink2</item>
+        <item name="android:windowBackground">@mipmap/bg7</item>
     </style>
 
     <style name="rg_btn_style">
@@ -22,6 +23,11 @@
         <item name="android:layout_marginBottom">4dp</item>
         -->
         <item name="android:background">@drawable/shape2</item>
+    </style>
+    <style name="CustomText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#212121</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>
