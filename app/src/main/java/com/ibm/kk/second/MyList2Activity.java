@@ -72,23 +72,28 @@ public class MyList2Activity extends ListActivity implements Runnable{
         Document doc = null;
         try {
             Thread.sleep(1000);
-            doc = Jsoup.connect("https://www.swufe.edu.cn/4778_2.html").get();
+            doc = Jsoup.connect("https://www.swufe.edu.cn/4778.html").get();
             Elements tables = doc.getElementsByTag("table");
-            Element td5 = tables.get(4);
-            //获取TD中的数据
-            Elements tds = td5.getElementsByTag("td");
+            for(int m=4;m<34;m++){
+                Element td5 = tables.get(m);
+                //获取TD中的数据
+                Elements tds = td5.getElementsByTag("td");
 
-            for(int j=0;j<tds.size();j+=3){
+                for(int j=0;j<tds.size();j+=3){
 
-                Element td1 = tds.get(j+1);
-                Element td2 = tds.get(j+2);
-                String content = td1.text();
-                String time = td2.text();
-                HashMap<String, String> map = new HashMap<String, String>();
-                map.put("ItemTitle",content);
-                map.put("ItemDetail",time);
-                retList.add(map);
+                    Element td1 = tds.get(j+1);
+                    Element td2 = tds.get(j+2);
+                    String content = td1.text();
+                    String time = td2.text();
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    map.put("ItemTitle",content);
+                    map.put("ItemDetail",time);
+                    retList.add(map);
+                }
+
+
             }
+
 
         } catch (IOException e) {
             e.printStackTrace();
