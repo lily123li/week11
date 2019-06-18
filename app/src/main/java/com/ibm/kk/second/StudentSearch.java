@@ -19,7 +19,7 @@ public class StudentSearch extends AppCompatActivity implements AdapterView.OnCl
     private Cursor cursor;
     private SimpleCursorAdapter adapter;
     private ListView listView;
-    private StudentDao dao;
+    private SCManager dao;
     private Button returnButton;
     private LinearLayout layout;
 
@@ -33,7 +33,7 @@ public class StudentSearch extends AppCompatActivity implements AdapterView.OnCl
         reButton = (Button) findViewById(R.id.bn_return);
         listView = (ListView) findViewById(R.id.searchListView);
         returnButton = (Button) findViewById(R.id.return_id);
-        dao = new StudentDao(new StudentDBHelper(this));
+        dao = new SCManager(this);
 
 
         reButton.setOnClickListener(this);

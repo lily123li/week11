@@ -26,7 +26,7 @@ import java.util.List;
 
 public class StudentListActivity extends ListActivity implements
         AdapterView.OnClickListener, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
-    private static final String TAG = "TestSQLite";
+
     private Button addStudent;
     private Cursor cursor;
     private SimpleCursorAdapter adapter;
@@ -34,13 +34,12 @@ public class StudentListActivity extends ListActivity implements
     private List<Long> list;
     private RelativeLayout relativeLayout;
     private Button searchButton;
-    private Button selectButton;
     private Button deleteButton;
     private Button selectAllButton;
     private Button canleButton;
     private LinearLayout layout;
-    private StudentDao dao;
-    private Student student;
+    private SCManager dao;
+    private SCItem student;
     private Boolean isDeleteList = false;
 
     @Override
@@ -48,11 +47,10 @@ public class StudentListActivity extends ListActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         list = new ArrayList<Long>();
-        student = new Student();
-        dao = new StudentDao(new StudentDBHelper(this));
+        student = new SCItem();
+        dao = new SCManager(this);
         addStudent = (Button) findViewById(R.id.btn_add_student);
         searchButton = (Button) findViewById(R.id.bn_search_id);
-        selectButton = (Button) findViewById(R.id.bn_select);
         deleteButton = (Button) findViewById(R.id.bn_delete);
         selectAllButton = (Button) findViewById(R.id.bn_selectall);
         canleButton = (Button) findViewById(R.id.bn_canel);
@@ -63,16 +61,12 @@ public class StudentListActivity extends ListActivity implements
         // 为按键设置监听
         addStudent.setOnClickListener(this);
         searchButton.setOnClickListener(this);
-        selectButton.setOnClickListener(this);
         deleteButton.setOnClickListener(this);
         canleButton.setOnClickListener(this);
         selectAllButton.setOnClickListener(this);
         listView.setOnItemClickListener(this);
         listView.setOnItemLongClickListener(this);
         listView.setOnCreateContextMenuListener(this);
-
-
-
 
 
     }
@@ -91,23 +85,13 @@ public class StudentListActivity extends ListActivity implements
         } else if (v == searchButton) {
             // 跳转到查询界面
             startActivity(new Intent(this, StudentSearch.class));
-        } else if (v == selectButton) {
-            // 跳转到选择界面
-            isDeleteList = !isDeleteList;
-            if (isDeleteList) {
-                checkOrClearAllCheckboxs(true);
-            } else {
-                showOrHiddenCheckBoxs(false);
-            }
         } else if (v == deleteButton) {
             // 删除数据
             if (list.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {
                     long id = list.get(i);
-                    Log.e(TAG, "delete id=" + id);
-                    int count = dao.deleteStudentById(id);
+                    int count = dao.delete(id);
                 }
-                dao.closeDB();
                 load();
             }
         } else if (v == canleButton) {
@@ -131,25 +115,19 @@ public class StudentListActivity extends ListActivity implements
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int item_id = item.getItemId();
-        student = (Student) listView.getTag();
-        Log.v(TAG, "TestSQLite++++student+" + listView.getTag() + "");
+        student = (SCItem) listView.getTag();
         final long student_id = student.getId();
         Intent intent = new Intent();
-        Log.v(TAG, "TestSQLite+++++++id"+student_id);
         switch (item_id) {
-            /* 添加
-            case R.id.add:
-                startActivity(new Intent(this, AddStudentActivity.class));
-                break;*/
+
             // 删除
             case R.id.delete:
                 deleteStudentInformation(student_id);
                 break;
             case R.id.look:
                 // 查看学生信息
-                Log.v(TAG, "TestSQLite+++++++look"+student+"");
                 intent.putExtra("student", student);
-                intent.setClass(this, ShowStudentActivity.class);
+                intent.setClass(this, ShowActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.write:
@@ -167,22 +145,20 @@ public class StudentListActivity extends ListActivity implements
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
     {
-        Student student = (Student) dao.getStudentFromView(view, id);
+        SCItem student = (SCItem) dao.getStudentFromView(view, id);
         listView.setTag(student);
         registerForContextMenu(listView);
         return false;
     }
 
-    // 点击一条记录是触发的事件
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
         if (!isDeleteList) {
             student = dao.getStudentFromView(view, id);
-            Log.e(TAG, "student*****" + dao.getStudentFromView(view, id));
             Intent intent = new Intent();
             intent.putExtra("student", student);
-            intent.setClass(this, ShowStudentActivity.class);
+            intent.setClass(this, ShowActivity.class);
             this.startActivity(intent);
         } else {
             CheckBox box = (CheckBox) view.findViewById(R.id.cb_box);
@@ -218,7 +194,6 @@ public class StudentListActivity extends ListActivity implements
     // 全选或者取消全选
     private void checkOrClearAllCheckboxs(boolean b) {
         int childCount = listView.getChildCount();
-        Log.e(TAG, "list child size=" + childCount);
         for (int i = 0; i < childCount; i++) {
             View view = listView.getChildAt(i);
             if (view != null) {
@@ -232,7 +207,6 @@ public class StudentListActivity extends ListActivity implements
     // 显示或者隐藏自定义菜单
     private void showOrHiddenCheckBoxs(boolean b) {
         int childCount = listView.getChildCount();
-        Log.e(TAG, "list child size=" + childCount);
         for (int i = 0; i < childCount; i++) {
             View view = listView.getChildAt(i);
             if (view != null) {
@@ -255,7 +229,7 @@ public class StudentListActivity extends ListActivity implements
                 .setCancelable(false)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        int raws = dao.deleteStudentById(delete_id);
+                        int raws = dao.delete(delete_id);
                         layout.setVisibility(View.GONE);
                         isDeleteList = !isDeleteList;
                         load();

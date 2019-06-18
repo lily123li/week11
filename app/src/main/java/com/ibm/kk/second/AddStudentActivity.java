@@ -21,8 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AddStudentActivity extends AppCompatActivity implements AdapterView.OnClickListener{
-    private static final String TAG = "AddStudentActivity";
-    private final static int DATE_DIALOG = 1;
+
     private static final int DATE_PICKER_ID = 1;
     private TextView idText;
     private EditText nameText;
@@ -38,16 +37,16 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     private CheckBox box3;
     private CheckBox box4;
     private Button restoreButton;
-    private String sex;
     private Button resetButton;
     private Long student_id;
-    private StudentDao dao;
+    private SCManager dao;
     private boolean isAdd = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_student);
+
         idText = (TextView) findViewById(R.id.tv_pro_id);
         nameText = (EditText) findViewById(R.id.et_name);
         numText = (EditText) findViewById(R.id.et_num);
@@ -63,7 +62,8 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         box4 = (CheckBox) findViewById(R.id.box4);
         restoreButton = (Button) findViewById(R.id.btn_save);
         resetButton = (Button) findViewById(R.id.btn_clear);
-        dao = new StudentDao(new StudentDBHelper(this)); // 设置监听
+        dao = new SCManager(this); // 设置监听
+
         restoreButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
         dataText.setOnClickListener(this);
@@ -78,12 +78,12 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             dataText.setText(getCurrentDate());
         } else {
             isAdd = false;
-            Student s = (Student) serial;
+            SCItem s = (SCItem) serial;
             showEditUI(s);
         }
     }
     //显示项目信息更新
-    private void showEditUI(Student student) {
+    private void showEditUI(SCItem student) {
         // 先将Student携带的数据还原到student的每一个属性中去
         student_id = student.getId();
         String name = student.getName();
@@ -125,22 +125,20 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     public void onClick(View v) {
         // 收集数据
         if (v == restoreButton) {
-            if (!checkUIInput()) {// 界面输入验证
+            if (!checkUIInput()) {
                 return;
             }
-            Student student = getStudentFromUI();
+            SCItem student = getStudentFromUI();
             if (isAdd) {
-                long id = dao.addStudent(student);
-                dao.closeDB();
+                long id = dao.add(student);
                 if (id > 0) {
                     Toast.makeText(this, "保存成功， ID=" + id,Toast.LENGTH_SHORT).show();
                     finish();
-                } else {
+                }  else {
                     Toast.makeText(this, "保存失败，请重新输入！", Toast.LENGTH_SHORT).show();
                 }
             } else if (!isAdd) {
-                long id = dao.addStudent(student);
-                dao.closeDB();
+                long id = dao.add(student);
                 if (id > 0) {
                     Toast.makeText(this, "更新成功",Toast.LENGTH_SHORT).show();
                     finish();
@@ -166,7 +164,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         group.clearCheck();
     }
     //      收集界面输入的数据，并将封装成Student对象
-    private Student getStudentFromUI() {
+    private SCItem getStudentFromUI() {
         String name = nameText.getText().toString();
         String num = numText.getText().toString();
         String grade = ((RadioButton) findViewById(group
@@ -196,10 +194,10 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         String period = periodText.getText().toString();
         String place = placeText.getText().toString();
         String modifyDateTime = getCurrentDateTime();
-        Student s=new Student(name, num, period, grade, type, place, trainDate, modifyDateTime);
+        SCItem s=new SCItem(name, num, period, grade, type, place, trainDate, modifyDateTime);
         if (!isAdd) {
             s.setId(Integer.parseInt(idText.getText().toString()));
-            dao.deleteStudentById(student_id);
+            dao.delete(student_id);
         }
         return s;
     }
@@ -238,7 +236,10 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             if (invadView != null)
                 invadView.requestFocus();
             return false;
-        }         return true;     }
+        }
+        return true;
+    }
+
     //时间的监听与事件
     private DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener()
     {
@@ -248,6 +249,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             dataText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
         }
     };
+
     @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
