@@ -11,17 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="5dip"      >
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@mipmap/bg4"
-            android:scaleType="center" />
+
 
 
     <TextView
@@ -30,13 +20,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="学院信息"
+        style="@style/CustomText"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView android:id="@+id/aca_id"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/funcTextView1"
@@ -46,16 +37,17 @@
 
         <EditText android:id="@+id/et_id4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_id"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_id"
             android:text="001"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/aca_name"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/aca_id"
@@ -64,16 +56,17 @@
             android:text="名称："      />
         <EditText android:id="@+id/et_name4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_name"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_name"
             android:text="经济信息工程学院"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/aca_phone"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/aca_name"
@@ -82,16 +75,17 @@
             android:text="电话："      />
         <EditText android:id="@+id/et_phone4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_phone"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_phone"
             android:text="87092220"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/aca_email"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/aca_phone"
@@ -100,15 +94,16 @@
             android:text="邮箱："      />
         <EditText android:id="@+id/et_email4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_email"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_email"
             android:text="xxzz@swufe.edu.cn"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
         <TextView android:id="@+id/aca_address"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/aca_email"
@@ -117,16 +112,17 @@
             android:text="地址："      />
         <EditText android:id="@+id/et_address4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_address"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_address"
             android:text="通博楼 B 座"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/aca_code"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/aca_address"
@@ -135,11 +131,12 @@
             android:text="邮编："      />
         <EditText android:id="@+id/et_code4"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/aca_code"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/aca_code"
             android:text="611130"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
 

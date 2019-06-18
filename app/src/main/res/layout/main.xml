@@ -33,8 +33,9 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="           编号            项目         次数          学时            等级 "
+        android:layout_marginLeft="16dp"
+        android:textSize="20dp"
+        android:text="编号     项目     次数     学时      等级 "
         android:textAppearance="@style/TextAppearance.AppCompat.Tooltip" />
 
 

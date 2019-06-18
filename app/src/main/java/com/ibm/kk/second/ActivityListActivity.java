@@ -76,11 +76,11 @@ public class ActivityListActivity extends AppCompatActivity implements Runnable{
             Document doc = null;
             try {
                 doc = Jsoup.connect("https://www.swufe.edu.cn/4778.html").get();
-                Elements tables = doc.getElementsByTag("table");
-                Element table6 = tables.get(5);
+                Elements uls = doc.getElementsByTag("ul");
+                Element u3 = uls.get(2);
                 //获取TD中的数据
-                Elements tds = table6.getElementsByTag("td");
-                for(int j=0;i<tds.size();j+=3){
+                Elements tds = u3.getElementsByTag("td");
+                for(int j=0;j<tds.size();j+=2){
                     Element td1 = tds.get(j+1);
                     Element td2 = tds.get(j+2);
                     String content = td1.text();

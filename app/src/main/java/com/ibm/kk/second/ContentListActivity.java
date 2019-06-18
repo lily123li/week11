@@ -1,11 +1,15 @@
 package com.ibm.kk.second;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,10 +21,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ContentListActivity extends ListActivity implements Runnable {
+public class ContentListActivity extends ListActivity implements Runnable, AdapterView.OnItemClickListener {
 
     String data[] = {"wait..."};
     Handler handler;
+    String url;
+    List<String> hrefs = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class ContentListActivity extends ListActivity implements Runnable {
                 super.handleMessage(msg);
             }
         };
+        getListView().setOnItemClickListener(this);
 
     }
 
@@ -57,23 +64,29 @@ public class ContentListActivity extends ListActivity implements Runnable {
         //获取网络数据，放入list带回到主线程中
         List<HashMap<String, String>> retList = new ArrayList<HashMap<String, String>>();
 
+
             Document doc = null;
             try {
-                Thread.sleep(500);
+                Thread.sleep(100);
                 doc = Jsoup.connect("https://www.swufe.edu.cn/4778_2.html").get();
                 Elements uls = doc.getElementsByTag("ul");
                 Element u3 = uls.get(2);
                 //获取TD中的数据
                 Elements tds = u3.getElementsByTag("td");
+                String a = "https://www.swufe.edu.cn/";
                 for(int j=0;j<tds.size();j+=2){
                     Element td1 = tds.get(j+1);
                     Element td2 = tds.get(j+2);
                     String content = td1.text();
                     String time = td2.text();
+
+                    String href = a + tds.attr("href");
+
                     HashMap<String, String> map = new HashMap<String, String>();
                     map.put("ItemTitle",content);
                     map.put("ItemDetail",time);
                     retList.add(map);
+                    hrefs.add(href);
                 }
 
             } catch (IOException e) {
@@ -87,5 +100,11 @@ public class ContentListActivity extends ListActivity implements Runnable {
         }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
     }
+}
 

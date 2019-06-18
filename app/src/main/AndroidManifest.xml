@@ -28,12 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".ActivityListActivity"></activity>
-        <activity android:name=".ContentListActivity"></activity>
-        <activity android:name=".MyList2Activity"></activity>
+        <activity android:name=".ActivityListActivity" />
+        <activity android:name=".ContentListActivity" />
+        <activity android:name=".MyList2Activity" />
     </application>
 
 </manifest>

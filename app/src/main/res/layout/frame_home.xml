@@ -11,17 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="5dip"      >
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@mipmap/bg4"
-            android:scaleType="center" />
+
     <TextView
         android:id="@+id/homeTextView1"
         android:layout_width="match_parent"
@@ -30,12 +20,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="个人信息"
+        style="@style/CustomText"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 
         <TextView android:id="@+id/stu_name"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/homeTextView1"
@@ -44,33 +35,36 @@
             android:text="姓名："      />
         <EditText android:id="@+id/et_name3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_name"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/stu_name"
             android:text="Jenny"
+            android:focusable="false"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/stu_id"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/stu_name"
             android:layout_marginBottom="5dip"
             android:textSize="16sp"
+
             android:text="学号："      />
         <EditText android:id="@+id/et_id3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_id"
             android:layout_alignParentRight="true"
+            android:focusable="false"
             android:layout_alignTop="@id/stu_id"
             android:text="41723056"
             android:paddingLeft="20dip"/>
         <TextView android:id="@+id/stu_grade"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/stu_id"
@@ -80,16 +74,17 @@
 
         <EditText android:id="@+id/et_grade3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_grade"
             android:layout_alignParentRight="true"
+            android:focusable="false"
             android:layout_alignTop="@id/stu_grade"
             android:text="2017级"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/stu_major"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/stu_grade"
@@ -99,16 +94,17 @@
 
         <EditText android:id="@+id/et_major3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_major"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/stu_major"
+            android:focusable="false"
             android:text="信息管理与信息系统"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/stu_phone"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/stu_major"
@@ -118,16 +114,17 @@
 
         <EditText android:id="@+id/et_phone3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_phone"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/stu_phone"
+            android:focusable="false"
             android:text="18359641266"
             android:paddingLeft="20dip"/>
 
         <TextView android:id="@+id/stu_email"
             android:layout_width="80dip"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:gravity="center_vertical|right"
             android:layout_marginRight="5dip"
             android:layout_below="@id/stu_phone"
@@ -137,10 +134,11 @@
 
         <EditText android:id="@+id/et_email3"
             android:layout_width="fill_parent"
-            android:layout_height="40dip"
+            android:layout_height="46dip"
             android:layout_toRightOf="@id/stu_email"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/stu_email"
+            android:focusable="false"
             android:text="8096477@qq.com"
             android:paddingLeft="20dip"/>
 

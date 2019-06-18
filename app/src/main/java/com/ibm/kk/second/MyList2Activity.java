@@ -1,10 +1,14 @@
 package com.ibm.kk.second;
 
 import android.app.ListActivity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
 
 import org.jsoup.Jsoup;
@@ -17,11 +21,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MyList2Activity extends ListActivity implements Runnable{
+public class MyList2Activity extends ListActivity implements Runnable, AdapterView.OnItemClickListener{
 
     Handler handler;
     private List<HashMap<String, String>> listItems;//存放文字、图片信息
     private SimpleAdapter listItemAdapter;//适配器
+    String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class MyList2Activity extends ListActivity implements Runnable{
                 super.handleMessage(msg);
             }
         };
+        getListView().setOnItemClickListener(this);
     }
 
     private void initListView() {
@@ -78,16 +84,22 @@ public class MyList2Activity extends ListActivity implements Runnable{
                 Element td5 = tables.get(m);
                 //获取TD中的数据
                 Elements tds = td5.getElementsByTag("td");
-
+                Elements as = td5.getElementsByTag("a");
+                String a = "https://www.swufe.edu.cn/";
                 for(int j=0;j<tds.size();j+=3){
 
                     Element td1 = tds.get(j+1);
                     Element td2 = tds.get(j+2);
+                    Element a1 = as.get(j);
                     String content = td1.text();
                     String time = td2.text();
+
+                    String href = a + a1.attr("href");
+
                     HashMap<String, String> map = new HashMap<String, String>();
                     map.put("ItemTitle",content);
                     map.put("ItemDetail",time);
+                    map.put("href",href);
                     retList.add(map);
                 }
 
@@ -103,5 +115,16 @@ public class MyList2Activity extends ListActivity implements Runnable{
         Message msg = handler.obtainMessage(7);
         msg.obj = retList;
         handler.sendMessage(msg);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        HashMap<String, String> map = (HashMap<String, String>)getListView().getItemAtPosition(position);
+
+        String url = map.get("href");
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 }
