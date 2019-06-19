@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,7 +15,6 @@ import java.util.Map;
 
 public class SCManager {//对数据库进行管理，对外提供方法
     private StudentDBHelper dbHelper;
-    private Cursor cursor;
     private String TBNAME;
 
     public SCManager(Context context) {
@@ -58,7 +58,6 @@ public class SCManager {//对数据库进行管理，对外提供方法
                 TableContanst.StudentColumns.ID + "=?", new String[] { s.getId() + "" });
     }
 
-    // 查询所有的记录
     public List<Map<String,Object>> listAll() {
 
         List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
@@ -82,14 +81,11 @@ public class SCManager {//对数据库进行管理，对外提供方法
         return data;
     }
 
-    //模糊查询一条记录
     public Cursor findStudent(String name){
         Cursor cursor = dbHelper.getWritableDatabase().query(TableContanst.STUDENT_TABLE,  null, "name like ?",
                 new String[] { "%" + name + "%" }, null, null, null,null);
         return cursor;      }
 
-
-        //自定义的方法通过View和Id得到一个student对象
     public SCItem getStudentFromView(View view, long id) {
         TextView nameView = (TextView) view.findViewById(R.id.tv_pro_name);
         TextView numView = (TextView) view.findViewById(R.id.tv_pro_num);

@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="5dp"       >
+
     <TextView android:id="@+id/id2_text_id"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -14,6 +15,7 @@
         android:textSize="16sp"
         android:gravity="left|center_vertical"
         android:text="编号："      />
+
     <TextView android:id="@+id/tv_info_id"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -21,6 +23,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/id2_text_id"
         android:gravity="left|center_vertical"/>
+
     <TextView android:id="@+id/name2_text_id"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -32,6 +35,7 @@
         android:textSize="16sp"
         android:gravity="left|center_vertical"
         android:text="项目："      />
+
     <TextView android:id="@+id/tv_info_name"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -39,6 +43,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/name2_text_id"
         android:gravity="left|center_vertical"      />
+
     <TextView android:id="@+id/num2_text_id"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -48,6 +53,7 @@
         android:layout_marginBottom="5dp"
         android:textSize="16sp"
         android:text="次数："      />
+
     <TextView android:id="@+id/tv_info_num"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -66,6 +72,7 @@
         android:layout_marginBottom="5dp"
         android:text="学时："
         android:textSize="16sp"      />
+
     <TextView
         android:id="@+id/tv_info_period"
         android:layout_width="fill_parent"
@@ -85,6 +92,7 @@
         android:layout_marginBottom="5dp"
         android:text="等级："
         android:textSize="16sp"      />
+
     <TextView
         android:id="@+id/tv_info_grade"
         android:layout_width="fill_parent"
@@ -93,6 +101,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/grade2_text_id"
         android:gravity="left|center_vertical"         />
+
     <TextView  android:id="@+id/type2_text_id"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -103,6 +112,7 @@
         android:layout_marginBottom="5dp"
         android:text="类型："
         android:textSize="16sp"     />
+
     <TextView android:layout_height="40dp"
         android:id="@+id/tv_info_type"
         android:layout_width="wrap_content"
@@ -110,7 +120,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/type2_text_id"
         android:gravity="left|center_vertical"/>
-
 
     <TextView android:id="@+id/place2_text_id"
         android:layout_width="fill_parent"
@@ -137,6 +146,7 @@
         android:layout_marginBottom="5dip"
         android:textSize="16sp"
         android:text="日期"     />
+
     <TextView android:id="@+id/tv_info_train_date"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -144,6 +154,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/train2_time_text_id"
         android:gravity="center_vertical|left"     />
+
     <Button android:id="@+id/back_to_list_id"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -153,4 +164,5 @@
         android:layout_alignParentRight="true"
         android:onClick="goBack">
     </Button>
+
 </RelativeLayout>

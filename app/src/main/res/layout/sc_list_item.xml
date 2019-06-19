@@ -10,9 +10,10 @@
         android:layout_marginLeft="26dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorblack"
+        android:textColor="@color/colorPrimary"
         android:textSize="16dp"
         android:layout_weight="1"/>
+
     <TextView android:id="@+id/tv_pro_name"
         android:layout_width="fill_parent"
         android:layout_gravity="center"
@@ -30,11 +31,12 @@
 
     <TextView android:id="@+id/tv_pro_period"
         android:layout_width="fill_parent"
-        android:layout_marginLeft="12dp"
+        android:layout_marginLeft="8dp"
         android:layout_gravity="center"
         android:textSize="16dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
+
     <TextView android:id="@+id/tv_pro_grade"
         android:layout_width="fill_parent"
         android:layout_gravity="center"
@@ -49,6 +51,7 @@
         android:textSize="16dp"
         android:layout_weight="1"
         android:visibility="gone"/>
+
     <TextView android:id="@+id/tv_pro_place"
         android:layout_width="fill_parent"
         android:layout_gravity="center"
@@ -56,6 +59,7 @@
         android:textSize="16dp"
         android:layout_weight="1"
         android:visibility="gone"/>
+
     <TextView android:id="@+id/tv_pro_traindate"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -63,6 +67,7 @@
         android:textSize="16dp"
         android:layout_weight="1"
         android:visibility="gone"/>
+
     <TextView android:id="@+id/tv_pro_modifyDateTime"
         android:layout_width="fill_parent"
         android:layout_gravity="center"
@@ -79,4 +84,5 @@
         android:visibility="gone"
         android:checked="false"
         android:focusable="false"/>
+
 </LinearLayout>

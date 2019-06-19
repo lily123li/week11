@@ -10,7 +10,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class FuncFragment extends Fragment{
+public class FuncFragment extends Fragment implements AdapterView.OnClickListener{
+
+    private Button academy;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -19,9 +22,20 @@ public class FuncFragment extends Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        TextView tv = (TextView)getView().findViewById(R.id.funcTextView1);
-        //tv.setText("这是功能页面");
+
+        academy = (Button)getView(). findViewById(R.id.academy);
+        academy.setOnClickListener(this);
+
+
+
+
 
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent list = new Intent(getActivity(),AcademyInfoActivity.class);
+        startActivity(list);
+
+    }
 }

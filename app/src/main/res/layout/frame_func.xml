@@ -139,8 +139,17 @@
             android:focusable="false"
             android:paddingLeft="20dip"/>
 
-
-
+        <Button
+            android:id="@+id/academy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginBottom="47dp"
+            android:text="学院信息" />
 
 
     </RelativeLayout> </ScrollView>

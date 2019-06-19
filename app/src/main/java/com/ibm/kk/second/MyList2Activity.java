@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -43,7 +42,7 @@ public class MyList2Activity extends ListActivity implements Runnable, AdapterVi
                 if(msg.what==7){
                     listItems = (List< HashMap<String, String>>) msg.obj;
                     listItemAdapter = new SimpleAdapter(MyList2Activity.this, listItems,
-                            R.layout.list_item, // ListItem 的 XML 布局实现
+                            R.layout.activity_list_item, // ListItem 的 XML 布局实现
                             new String[] { "ItemTitle", "ItemDetail" },//key
                             new int[] { R.id.itemTitle, R.id.itemDetail }//key与title的一一对应关系
                     );
@@ -65,7 +64,7 @@ public class MyList2Activity extends ListActivity implements Runnable, AdapterVi
         }
         // 生成适配器的 Item 和动态数组对应的元素
         listItemAdapter = new SimpleAdapter(this, listItems, // listItems 数据源
-                R.layout.list_item, // ListItem 的 XML 布局实现
+                R.layout.activity_list_item, // ListItem 的 XML 布局实现
                 new String[] { "ItemTitle", "ItemDetail" },//key
                 new int[] { R.id.itemTitle, R.id.itemDetail }//key与title的一一对应关系
         );

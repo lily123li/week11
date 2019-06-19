@@ -11,7 +11,7 @@ public class ShowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.student_info);
+        setContentView(R.layout.sc_info);
         Intent intent = getIntent();
         SCItem scitem = (SCItem) intent.getSerializableExtra(TableContanst.STUDENT_TABLE);
         ((TextView)findViewById(R.id.tv_info_id)).setText(scitem.getId()+"");

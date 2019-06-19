@@ -62,14 +62,14 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         box4 = (CheckBox) findViewById(R.id.box4);
         restoreButton = (Button) findViewById(R.id.btn_save);
         resetButton = (Button) findViewById(R.id.btn_clear);
-        dao = new SCManager(this); // 设置监听
+        dao = new SCManager(this);
 
         restoreButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
         dataText.setOnClickListener(this);
         checkIsAddStudent();
         }
-    // 检查此时Activity是否用于添加项目信息
+
     private void checkIsAddStudent() {
         Intent intent = getIntent();
         Serializable serial = intent.getSerializableExtra(TableContanst.STUDENT_TABLE);
@@ -82,9 +82,9 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             showEditUI(s);
         }
     }
-    //显示项目信息更新
+
     private void showEditUI(SCItem student) {
-        // 先将Student携带的数据还原到student的每一个属性中去
+
         student_id = student.getId();
         String name = student.getName();
         String num = student.getNum();
@@ -112,7 +112,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
                 box4.setChecked(true);
             }
         }
-        // 还原数据
+
         idText.setText(student_id + "");
         nameText.setText(name + "");
         numText.setText(num + "");
@@ -152,7 +152,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
             showDialog(DATE_PICKER_ID);
         }
     }
-    //       清空界面的数据
+
     private void clearUIData() {
         nameText.setText("");
         numText.setText("");
@@ -163,7 +163,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         box2.setChecked(false);
         group.clearCheck();
     }
-    //      收集界面输入的数据，并将封装成Student对象
+
     private SCItem getStudentFromUI() {
         String name = nameText.getText().toString();
         String num = numText.getText().toString();
@@ -201,17 +201,17 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         }
         return s;
     }
-          //* 得到当前的日期时间
+
     private String getCurrentDateTime() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return format.format(new Date());
     }
-    //      * 得到当前的日期
+
     private String getCurrentDate() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         return format.format(new Date());
     }
-    //验证用户是否按要求输入了数据
+
     private boolean checkUIInput() { // name, age, sex
         String name = nameText.getText().toString();
         String num = numText.getText().toString();
@@ -220,7 +220,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         String message = null;
         View invadView = null;
         if (name.trim().length() == 0) {
-            message = "请输入姓名！";
+            message = "请输入项目名称！";
             invadView = nameText;
         }  else if (period.trim().length() == 0) {
             message = "请输入学时！";
