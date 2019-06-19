@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcademyActivity">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dip"      >
+
+    <TextView
+        android:id="@+id/funcTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="学院信息"
+        android:textSize="30dp"
+        style="@style/CustomText"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView android:id="@+id/aca_id2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/funcTextView2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="编号："      />
+
+    <EditText android:id="@+id/et_id5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_id2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_id2"
+        android:hint="请输入学院编号"
+        android:paddingLeft="20dip"/>
+
+    <TextView android:id="@+id/aca_name2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/aca_id2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="名称："      />
+
+    <EditText android:id="@+id/et_name5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_name2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_name2"
+        android:hint="请输入学院名称"
+        android:paddingLeft="20dip"/>
+
+    <TextView android:id="@+id/aca_phone2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/aca_name2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="电话："      />
+
+    <EditText android:id="@+id/et_phone5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_phone2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_phone2"
+        android:hint="请输入学院电话"
+        android:paddingLeft="20dip"/>
+
+    <TextView android:id="@+id/aca_email2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/aca_phone2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="邮箱："      />
+
+    <EditText android:id="@+id/et_email5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_email2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_email2"
+        android:hint="请输入学院邮箱"
+        android:paddingLeft="20dip"/>
+
+    <TextView android:id="@+id/aca_address2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/aca_email2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="地址："      />
+
+    <EditText android:id="@+id/et_address5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_address2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_address2"
+        android:hint="请输入学院办公地址"
+        android:paddingLeft="20dip"/>
+
+    <TextView android:id="@+id/aca_code2"
+        android:layout_width="80dip"
+        android:layout_height="46dip"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/aca_address2"
+        android:layout_marginBottom="5dip"
+        android:textSize="16sp"
+        android:text="邮编："      />
+
+    <EditText android:id="@+id/et_code5"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_toRightOf="@id/aca_code2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/aca_code2"
+        android:hint="请输入学院邮编"
+        android:paddingLeft="20dip"/>
+
+        <Button
+            android:id="@+id/aca_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="145dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginBottom="60dp"
+            android:text="保存" />
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
