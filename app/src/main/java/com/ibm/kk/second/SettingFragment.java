@@ -1,13 +1,19 @@
 package com.ibm.kk.second;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class SettingFragment extends Fragment {
+public class SettingFragment extends Fragment implements AdapterView.OnClickListener{
+
+    private ImageButton sc;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -16,7 +22,15 @@ public class SettingFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        TextView tv = (TextView)getView().findViewById(R.id.settingTextView1);
-        //tv.setText("这是设置页面");
+
+        sc = (ImageButton)getView().findViewById(R.id.sc);
+        sc.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent list = new Intent(getActivity(),StudentListActivity.class);
+        startActivity(list);
     }
 }

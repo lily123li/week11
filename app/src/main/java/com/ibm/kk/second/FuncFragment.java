@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class FuncFragment extends Fragment implements AdapterView.OnClickListener{
 
-    private Button academy;
-    private Button activity;
+    private ImageButton academy1;
+    private ImageButton activity1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,10 +25,10 @@ public class FuncFragment extends Fragment implements AdapterView.OnClickListene
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        academy = (Button)getView().findViewById(R.id.academy);
-        academy.setOnClickListener(this);
-        academy = (Button)getView(). findViewById(R.id.activity);
-        academy.setOnClickListener(this);
+        academy1 = (ImageButton)getView().findViewById(R.id.academy1);
+        academy1.setOnClickListener(this);
+        activity1 = (ImageButton)getView().findViewById(R.id.activity1);
+        activity1.setOnClickListener(this);
 
 
 
@@ -37,17 +38,15 @@ public class FuncFragment extends Fragment implements AdapterView.OnClickListene
     @Override
     public void onClick(View btn) {
 
-        if (btn.getId() == R.id.academy) {
+        if (btn.getId() == R.id.academy1) {
             Intent list = new Intent(getActivity(),AcademyInfoActivity.class);
             startActivity(list);
 
-        } else {
+        }if (btn.getId() == R.id.activity1) {
             Intent list = new Intent(getActivity(),MyList2Activity.class);
             startActivity(list);
 
         }
-
-
 
     }
 }
