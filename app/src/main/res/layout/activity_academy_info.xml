@@ -156,7 +156,7 @@
             android:layout_marginStart="44dp"
             android:layout_marginLeft="44dp"
             android:layout_marginBottom="70dp"
-            android:text="添加" />
+            android:text="返回" />
 
         <Button
             android:id="@+id/button4"
