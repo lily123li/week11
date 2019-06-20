@@ -17,7 +17,7 @@
         android:scaleType="center" />
 
     <ImageButton
-        android:id="@+id/sc"
+        android:id="@+id/students"
         android:layout_width="255dp"
         android:layout_height="137dp"
         android:layout_alignParentStart="true"

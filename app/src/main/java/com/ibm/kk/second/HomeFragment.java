@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class HomeFragment extends Fragment implements AdapterView.OnClickListener{
 
-
+    private ImageButton student;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,13 +25,15 @@ public class HomeFragment extends Fragment implements AdapterView.OnClickListene
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         TextView tv = (TextView)getView().findViewById(R.id.homeTextView1);
-
+        student = (ImageButton)getView().findViewById(R.id.students);
+        student.setOnClickListener(this);
 
 
     }
 
     @Override
     public void onClick(View v) {
-
+        Intent list = new Intent(getActivity(),StudentInfoActivity.class);
+        startActivity(list);
     }
 }

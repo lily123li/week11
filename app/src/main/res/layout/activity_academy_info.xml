@@ -10,43 +10,30 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:padding="5dip"
-        tools:layout_editor_absoluteX="73dp"
+        android:padding="5dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <ImageButton
             android:id="@+id/academy1"
-            android:layout_width="233dp"
-            android:layout_height="201dp"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
             android:layout_marginTop="0dp"
             android:background="@mipmap/title1"
             android:foregroundGravity="center" />
 
         <TextView
-            android:id="@+id/funcTextView1"
-            style="@style/CustomText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="30dp" />
-
-        <TextView
             android:id="@+id/aca_id"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
-            android:layout_below="@id/funcTextView1"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="60sp"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="120sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
             android:text="编号："
             android:textColor="@color/colorblack"
@@ -55,22 +42,26 @@
         <TextView
             android:id="@+id/et_id4"
             android:layout_width="fill_parent"
-            android:layout_height="46dip"
-            android:layout_alignTop="@id/aca_id"
+            android:layout_height="46dp"
+            android:layout_marginTop="120sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|left"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@id/aca_id"
-            android:paddingLeft="20dip" />
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
 
         <TextView
             android:id="@+id/aca_name"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_below="@id/aca_id"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
-            android:textColor="@color/colorblack"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
             android:text="名称："
+            android:textColor="@color/colorblack"
             android:textSize="16sp" />
 
         <TextView
@@ -78,93 +69,103 @@
             android:layout_width="fill_parent"
             android:layout_height="46dip"
             android:layout_alignTop="@id/aca_name"
+            android:gravity="center_vertical|left"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@id/aca_name"
-            android:paddingLeft="20dip" />
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
 
         <TextView
             android:id="@+id/aca_phone"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
-            android:textColor="@color/colorblack"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_below="@id/aca_name"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
             android:text="电话："
+            android:textColor="@color/colorblack"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/et_phone4"
             android:layout_width="fill_parent"
-            android:layout_height="46dip"
+            android:layout_height="46dp"
             android:layout_alignTop="@id/aca_phone"
             android:layout_alignParentRight="true"
+            android:gravity="center_vertical|left"
             android:layout_toRightOf="@id/aca_phone"
-            android:paddingLeft="20dip" />
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
 
         <TextView
             android:id="@+id/aca_email"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_below="@id/aca_phone"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
-            android:textColor="@color/colorblack"
             android:text="邮箱："
+            android:textColor="@color/colorblack"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/et_email4"
             android:layout_width="fill_parent"
-            android:layout_height="46dip"
+            android:layout_height="46dp"
             android:layout_alignTop="@id/aca_email"
+            android:gravity="center_vertical|left"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@id/aca_email"
-            android:paddingLeft="20dip" />
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
 
         <TextView
             android:id="@+id/aca_address"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_below="@id/aca_email"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
-            android:textColor="@color/colorblack"
             android:text="地址："
+            android:textColor="@color/colorblack"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/et_address4"
             android:layout_width="fill_parent"
-            android:layout_height="46dip"
+            android:layout_height="46dp"
+            android:textSize="16sp"
             android:layout_alignTop="@id/aca_address"
+            android:gravity="center_vertical|left"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@id/aca_address"
-            android:paddingLeft="20dip" />
+            android:paddingLeft="20dp" />
 
         <TextView
             android:id="@+id/aca_code"
-            android:layout_width="80dip"
-            android:layout_height="46dip"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_below="@id/aca_address"
-            android:layout_marginRight="5dip"
-            android:layout_marginBottom="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical|right"
-            android:textColor="@color/colorblack"
             android:text="邮编："
+            android:textColor="@color/colorblack"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/et_code4"
             android:layout_width="fill_parent"
-            android:layout_height="46dip"
+            android:layout_height="46dp"
             android:layout_alignTop="@id/aca_code"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@id/aca_code"
-            android:paddingLeft="20dip" />
+            android:gravity="center_vertical|left"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
 
         <Button
             android:id="@+id/aca_button1"
@@ -175,7 +176,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="160dp"
             android:layout_marginLeft="160dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginBottom="23dp"
             android:text="返回" />
 
         <Button
@@ -187,7 +188,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="7dp"
             android:layout_marginRight="7dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginBottom="23dp"
             android:text="修改" />
     </RelativeLayout>
 

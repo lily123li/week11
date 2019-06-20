@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AcademyInfoActivity extends AppCompatActivity implements AdapterView.OnClickListener{
 
@@ -46,14 +47,25 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
         aca_id2 = sharedPreferences.getString("aca_id", "001");
         aca_name2 = sharedPreferences.getString("aca_name", "经济信息工程学院");
         aca_phone2 = sharedPreferences.getString("aca_phone", "87092220");
-        aca_code2 = sharedPreferences.getString("aca_code", "xxzz@swufe.edu.cn");
+        aca_code2 = sharedPreferences.getString("aca_code", "611130");
         aca_address2 = sharedPreferences.getString("aca_address", "通博楼B座");
-        aca_email2 = sharedPreferences.getString("aca_email", "611130");
+        aca_email2 = sharedPreferences.getString("aca_email", "xxzz@swufe.edu.cn");
 
         button = (Button)this.findViewById(R.id.aca_button1);
         button.setOnClickListener(this);
         button4 = (Button)this.findViewById(R.id.button4);
         button4.setOnClickListener(this);
+
+        show();
+    }
+
+    private void show() {
+        aca_id.setText(aca_id2 );
+        aca_name.setText(aca_name2 );
+        aca_phone.setText(aca_phone2 );
+        aca_code.setText(aca_code2 );
+        aca_address.setText(aca_address2);
+        aca_email.setText(aca_email2);
     }
 
     @Override
@@ -78,6 +90,8 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
             editor.putString("aca_address",aca_address2);
             editor.putString("aca_email",aca_email2);
             editor.commit();
+
+            show();
         }
         super.onActivityResult(requestCode,resultCode,data);
     }

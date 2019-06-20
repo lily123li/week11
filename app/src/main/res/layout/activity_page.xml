@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".PageActivity">
 
+
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -18,28 +21,52 @@
         android:background="@mipmap/bg5"
         android:scaleType="center" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="30dp"
-        android:gravity="center"
-        android:text="Welcome to SCS"
-        android:textSize="30dp" />
 
+    <ImageButton
+        android:id="@+id/academy1"
+        android:layout_width="345dp"
+        android:layout_height="197dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="16dp"
+        android:background="@mipmap/logo8"
+        android:foregroundGravity="center" />
 
-    <Button
+    <ImageButton
         android:id="@+id/entry"
+        android:layout_width="211dp"
+        android:layout_height="81dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="352dp"
+        android:background="@mipmap/logo10"
+        android:foregroundGravity="center" />
+
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="114dp"
-        android:background="@color/colorPink1"
-        android:text="进入系统" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="460dp"
+        android:text="Click ENTRY and enjoy your SCS !"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="490dp"
+        android:text="If you want to use it quickly, please click on the menu in the upper right corner."
+        android:textSize="20dp" />
+
+
 
 
 </RelativeLayout>

@@ -33,7 +33,9 @@
         <activity android:name=".ContentListActivity" />
         <activity android:name=".MyList2Activity" />
         <activity android:name=".AcademyActivity" />
-        <activity android:name=".AcademyInfoActivity"></activity>
+        <activity android:name=".AcademyInfoActivity" />
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".StudentInfoActivity"></activity>
     </application>
 
 </manifest>

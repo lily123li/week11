@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +18,14 @@ import java.util.List;
 public class PageActivity extends AppCompatActivity implements
         AdapterView.OnClickListener{
 
-    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
-        Button btn1 = (Button) findViewById(R.id.entry);
+
+
+        ImageButton btn1 = (ImageButton)findViewById(R.id.entry);
         btn1.setOnClickListener(this);
 
         List<String> list1 = new ArrayList<String>();
