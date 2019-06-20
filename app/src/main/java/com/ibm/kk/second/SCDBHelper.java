@@ -3,19 +3,18 @@ package com.ibm.kk.second;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-public class StudentDBHelper extends SQLiteOpenHelper {
+public class SCDBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "student_manager.db";
     public static final String TB_NAME = "tb_student";
     public static final int VERSION = 1;
 
-    public StudentDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public SCDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
-    public StudentDBHelper(Context context) { this(context, DB_NAME, null, VERSION); }
+    public SCDBHelper(Context context) { this(context, DB_NAME, null, VERSION); }
 
 
     @Override

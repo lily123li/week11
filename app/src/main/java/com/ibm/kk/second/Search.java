@@ -12,14 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class StudentSearch extends AppCompatActivity implements AdapterView.OnClickListener {
+public class Search extends AppCompatActivity implements AdapterView.OnClickListener {
     private EditText nameText;
     private Button button;
     private Button reButton;
     private Cursor cursor;
     private SimpleCursorAdapter adapter;
     private ListView listView;
-    private SCManager dao;
+    private SCManager sc;
     private Button returnButton;
     private LinearLayout layout;
 
@@ -33,7 +33,7 @@ public class StudentSearch extends AppCompatActivity implements AdapterView.OnCl
         reButton = (Button) findViewById(R.id.bn_return);
         listView = (ListView) findViewById(R.id.searchListView);
         returnButton = (Button) findViewById(R.id.return_id);
-        dao = new SCManager(this);
+        sc = new SCManager(this);
 
 
         reButton.setOnClickListener(this);
@@ -48,9 +48,9 @@ public class StudentSearch extends AppCompatActivity implements AdapterView.OnCl
             nameText.setVisibility(View.GONE);
             layout.setVisibility(View.VISIBLE);
             String name = nameText.getText().toString();
-            cursor = dao.findStudent(name);
+            cursor = sc.findSC(name);
             if (!cursor.moveToFirst()) {
-                Toast.makeText(this, "没有所查学员信息！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "无相关信息！", Toast.LENGTH_SHORT).show();
             } else
                 //如果有所查询的信息，则将查询结果显示出来
                 adapter = new SimpleCursorAdapter(this, R.layout.find_student_list_item,

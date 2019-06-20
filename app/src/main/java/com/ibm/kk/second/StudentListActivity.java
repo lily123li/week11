@@ -14,10 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,7 +30,7 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
     private Button searchButton;
     private Button deleteButton;
     private SCManager dao;
-    private SCItem student;
+    private SCItem sc;
     private Boolean isDeleteList = false;
 
     @Override
@@ -41,7 +38,7 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         list = new ArrayList<Long>();
-        student = new SCItem();
+        sc = new SCItem();
         dao = new SCManager(this);
         deleteButton = (Button) findViewById(R.id.bn_delete);
         addStudent = (Button) findViewById(R.id.btn_add_student);
@@ -66,7 +63,7 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
         if (v == addStudent) {
             startActivity(new Intent(StudentListActivity.this, AddStudentActivity.class));
         } else if (v == searchButton) {
-            startActivity(new Intent(this, StudentSearch.class));
+            startActivity(new Intent(this, Search.class));
         } else if (v == deleteButton) {
             if (list.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {
@@ -87,20 +84,20 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int item_id = item.getItemId();
-        student = (SCItem) listView.getTag();
-        final long student_id = student.getId();
+        sc = (SCItem) listView.getTag();
+        final long sc_id = sc.getId();
         Intent intent = new Intent();
         switch (item_id) {
             case R.id.delete:
-                deleteSCInformation(student_id);
+                deleteSCInformation(sc_id);
                 break;
             case R.id.look:
-                intent.putExtra("student", student);
+                intent.putExtra("student", sc);
                 intent.setClass(this, ShowActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.write:
-                intent.putExtra("student", student);
+                intent.putExtra("student", sc);
                 intent.setClass(this, AddStudentActivity.class);
                 this.startActivity(intent);
                 break;
@@ -120,9 +117,9 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
     }
 
     public void load() {
-        StudentDBHelper studentDBHelper = new StudentDBHelper(
+        SCDBHelper scDBHelper = new SCDBHelper(
                 StudentListActivity.this);
-        SQLiteDatabase database = studentDBHelper.getWritableDatabase();
+        SQLiteDatabase database = scDBHelper.getWritableDatabase();
         cursor = database.query(TableContanst.STUDENT_TABLE, null, null, null,
                 null, null, TableContanst.StudentColumns.MODIFY_TIME + " desc");
         startManagingCursor(cursor);

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 public class SCManager {//对数据库进行管理，对外提供方法
-    private StudentDBHelper dbHelper;
+    private SCDBHelper dbHelper;
     private String TBNAME;
 
     public SCManager(Context context) {
-        dbHelper = new StudentDBHelper(context);
-        TBNAME = StudentDBHelper.TB_NAME;
+        dbHelper = new SCDBHelper(context);
+        TBNAME = SCDBHelper.TB_NAME;
     }
 
     public long add(SCItem s) {
@@ -81,7 +80,7 @@ public class SCManager {//对数据库进行管理，对外提供方法
         return data;
     }
 
-    public Cursor findStudent(String name){
+    public Cursor findSC(String name){
         Cursor cursor = dbHelper.getWritableDatabase().query(TableContanst.STUDENT_TABLE,  null, "name like ?",
                 new String[] { "%" + name + "%" }, null, null, null,null);
         return cursor;      }
@@ -101,9 +100,9 @@ public class SCManager {//对数据库进行管理，对外提供方法
         String type = typeView.getText().toString();
         String place = placeView.getText().toString();
         String data = dataView.getText().toString();
-        SCItem student = new SCItem(id, name, num, period, grade, type, place, data,null);
+        SCItem sc = new SCItem(id, name, num, period, grade, type, place, data,null);
         return
-                student;
+                sc;
     }
 }
 

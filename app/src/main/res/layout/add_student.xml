@@ -20,6 +20,7 @@
             android:textSize="16sp"
             android:textColor="@color/colorblack"
             android:text="编号："     />
+
         <TextView android:id="@+id/tv_pro_id"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
@@ -29,6 +30,7 @@
             android:layout_alignTop="@id/tv_pro_text_id"
             android:gravity="center"
             android:textSize="16sp"      />
+
         <TextView android:id="@+id/tv_name_text"
             android:layout_width="80dp"
             android:layout_height="40dp"
@@ -40,6 +42,7 @@
             android:textSize="16sp"
             android:textColor="@color/colorblack"
             android:text="项目："      />
+
         <EditText android:id="@+id/et_name"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
@@ -108,6 +111,7 @@
             android:textColor="@color/colorblack"
             android:text="等级："
             android:textSize="16sp"      />
+
         <RadioGroup
             android:id="@+id/rg_grade"
             android:layout_width="fill_parent"
@@ -131,6 +135,7 @@
                 android:textSize="16sp">
             </RadioButton>
         </RadioGroup>
+
         <TextView  android:id="@+id/tv_type_text"
             android:layout_width="80dp"
             android:layout_height="40dp"
@@ -167,6 +172,7 @@
             android:layout_below="@id/box2"
             android:text="@string/box3"     >
         </CheckBox>
+
         <CheckBox     android:id="@+id/box4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -206,6 +212,7 @@
             android:textColor="@color/colorblack"
             android:textSize="16sp"
             android:text="日期："              />
+
         <EditText android:id="@+id/et_traindate"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
@@ -216,6 +223,7 @@
             android:inputType="date"
             android:paddingLeft="20dp"
             android:focusable="false"     />
+
         <Button android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -223,6 +231,7 @@
             android:layout_below="@id/tv_traindate_text"
             android:layout_alignRight="@id/rg_grade">
         </Button>
+
         <Button android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -231,4 +240,5 @@
             android:layout_toLeftOf="@id/btn_save"
             android:layout_marginRight="10dp">
         </Button>
+
     </RelativeLayout> </ScrollView>
