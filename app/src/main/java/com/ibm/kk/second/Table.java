@@ -1,6 +1,6 @@
 package com.ibm.kk.second;
 
-public class TableContanst {
+public class Table {
     public static final String STUDENT_TABLE = "student";
     public static final class StudentColumns {
         public static final String ID = "_id";

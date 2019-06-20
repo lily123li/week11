@@ -17,12 +17,14 @@ import java.util.List;
 public class PageActivity extends AppCompatActivity implements
         AdapterView.OnClickListener{
 
+    Button btn1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
-        //Button btn1 = (Button) findViewById(R.id.entry_system);
-        //btn1.setOnClickListener(this);
+        Button btn1 = (Button) findViewById(R.id.entry);
+        btn1.setOnClickListener(this);
 
         List<String> list1 = new ArrayList<String>();
         for(int i = 1;i<100;i++){
@@ -33,9 +35,8 @@ public class PageActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-        //startActivity(new Intent(PageActivity.this, StudentListActivity.class));
-        //startActivity(new Intent(PageActivity.this, LoginActivity.class));
-        //startActivity(new Intent(PageActivity.this, RegisterActivity.class));
+        startActivity(new Intent(PageActivity.this, FrameActivity.class));
+
     }
 
     // 创建菜单

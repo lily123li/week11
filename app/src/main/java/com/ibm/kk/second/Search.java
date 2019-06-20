@@ -52,17 +52,17 @@ public class Search extends AppCompatActivity implements AdapterView.OnClickList
             if (!cursor.moveToFirst()) {
                 Toast.makeText(this, "无相关信息！", Toast.LENGTH_SHORT).show();
             } else
-                //如果有所查询的信息，则将查询结果显示出来
-                adapter = new SimpleCursorAdapter(this, R.layout.find_student_list_item,
-                        cursor, new String[] { TableContanst.StudentColumns.ID,
-                        TableContanst.StudentColumns.NAME,
-                        TableContanst.StudentColumns.NUM,
-                        TableContanst.StudentColumns.PERIOD,
-                        TableContanst.StudentColumns.GRADE,
-                        TableContanst.StudentColumns.TYPE,
-                        TableContanst.StudentColumns.PLACE,
-                        TableContanst.StudentColumns.TRAIN_DATE },
-                        new int[] {
+
+                adapter = new SimpleCursorAdapter(this, R.layout.find_sc_list_item,
+                        cursor, new String[]{Table.StudentColumns.ID,
+                        Table.StudentColumns.NAME,
+                        Table.StudentColumns.NUM,
+                        Table.StudentColumns.PERIOD,
+                        Table.StudentColumns.GRADE,
+                        Table.StudentColumns.TYPE,
+                        Table.StudentColumns.PLACE,
+                        Table.StudentColumns.TRAIN_DATE},
+                        new int[]{
                                 R.id.tv_pro_id,
                                 R.id.tv_pro_name,
                                 R.id.tv_pro_num,
@@ -70,7 +70,8 @@ public class Search extends AppCompatActivity implements AdapterView.OnClickList
                                 R.id.tv_pro_grade,
                                 R.id.tv_pro_type,
                                 R.id.tv_pro_place,
-                                R.id.tv_pro_traindate });
+                                R.id.tv_pro_traindate}) {
+                };
             listView.setAdapter(adapter);
         }else if(v==reButton|v==returnButton){
             finish();

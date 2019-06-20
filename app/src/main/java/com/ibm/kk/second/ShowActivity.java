@@ -14,7 +14,7 @@ public class ShowActivity extends AppCompatActivity {
         setContentView(R.layout.sc_info);
 
         Intent intent = getIntent();
-        SCItem scitem = (SCItem) intent.getSerializableExtra(TableContanst.STUDENT_TABLE);
+        SCItem scitem = (SCItem) intent.getSerializableExtra(Table.STUDENT_TABLE);
         ((TextView)findViewById(R.id.tv_info_id)).setText(scitem.getId()+"");
         ((TextView)findViewById(R.id.tv_info_name)).setText(scitem.getName());
         ((TextView)findViewById(R.id.tv_info_num)).setText(scitem.getNum());
@@ -22,7 +22,7 @@ public class ShowActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.tv_info_grade)).setText(scitem.getGrade());
         ((TextView)findViewById(R.id.tv_info_type)).setText(scitem.getType());
         ((TextView)findViewById(R.id.tv_info_train_date)).setText(scitem.getTrainDate());
-        ((TextView)findViewById(R.id.tv_info_place)).setText(scitem.getPlace());
+        //((TextView)findViewById(R.id.tv_info_place)).setText(scitem.getPlace());
     }
     public void goBack(View view) {
         finish();

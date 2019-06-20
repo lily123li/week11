@@ -121,28 +121,14 @@
         android:layout_alignTop="@id/type2_text_id"
         android:gravity="left|center_vertical"/>
 
-    <TextView android:id="@+id/place2_text_id"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="5dp"
-        android:layout_below="@id/type2_text_id"
-        android:layout_marginBottom="5dp"
-        android:textSize="16sp"
-        android:text="地点："     />
-    <TextView android:id="@+id/tv_info_place"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_toRightOf="@id/place2_text_id"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/place2_text_id"
-        android:gravity="center_vertical|left"     />
+
 
     <TextView android:id="@+id/train2_time_text_id"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:gravity="center_vertical|left"
         android:layout_marginRight="5dp"
-        android:layout_below="@id/place2_text_id"
+        android:layout_below="@id/type2_text_id"
         android:layout_marginBottom="5dip"
         android:textSize="16sp"
         android:text="日期"     />

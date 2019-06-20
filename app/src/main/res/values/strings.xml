@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Second Class System</string>
+    <string name="app_name">SCS</string>
     <string name="rdo_home_label">Student</string>
     <string name="rdo_func_label">Academy</string>
-    <string name="rdo_setting_label">College</string>
+    <string name="rdo_setting_label">SC</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

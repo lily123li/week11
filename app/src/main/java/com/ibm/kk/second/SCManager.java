@@ -24,64 +24,64 @@ public class SCManager {//对数据库进行管理，对外提供方法
     public long add(SCItem s) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContanst.StudentColumns.NAME, s.getName());
-        values.put(TableContanst.StudentColumns.NUM, s.getNum());
-        values.put(TableContanst.StudentColumns.PERIOD, s.getPeriod());
-        values.put(TableContanst.StudentColumns.GRADE, s.getGrade());
-        values.put(TableContanst.StudentColumns.TYPE, s.getType());
-        values.put(TableContanst.StudentColumns.PLACE, s.getPlace());
-        values.put(TableContanst.StudentColumns.TRAIN_DATE, s.getTrainDate());
-        values.put(TableContanst.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
-        return db.insert(TableContanst.STUDENT_TABLE, null, values);
+        values.put(Table.StudentColumns.NAME, s.getName());
+        values.put(Table.StudentColumns.NUM, s.getNum());
+        values.put(Table.StudentColumns.PERIOD, s.getPeriod());
+        values.put(Table.StudentColumns.GRADE, s.getGrade());
+        values.put(Table.StudentColumns.TYPE, s.getType());
+        values.put(Table.StudentColumns.PLACE, s.getPlace());
+        values.put(Table.StudentColumns.TRAIN_DATE, s.getTrainDate());
+        values.put(Table.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
+        return db.insert(Table.STUDENT_TABLE, null, values);
     }
 
 
     public int delete(long id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        return db.delete(TableContanst.STUDENT_TABLE,
-                TableContanst.StudentColumns.ID + "=?", new String[] { id + "" });
+        return db.delete(Table.STUDENT_TABLE,
+                Table.StudentColumns.ID + "=?", new String[] { id + "" });
     }
 
     public int update(SCItem s) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(TableContanst.StudentColumns.NAME, s.getName());
-        values.put(TableContanst.StudentColumns.NUM, s.getNum());
-        values.put(TableContanst.StudentColumns.PERIOD, s.getPeriod());
-        values.put(TableContanst.StudentColumns.GRADE, s.getGrade());
-        values.put(TableContanst.StudentColumns.TYPE, s.getType());
-        values.put(TableContanst.StudentColumns.PLACE, s.getPlace());
-        values.put(TableContanst.StudentColumns.TRAIN_DATE, s.getTrainDate());
-        values.put(TableContanst.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
-        return db.update(TableContanst.STUDENT_TABLE, values,
-                TableContanst.StudentColumns.ID + "=?", new String[] { s.getId() + "" });
+        values.put(Table.StudentColumns.NAME, s.getName());
+        values.put(Table.StudentColumns.NUM, s.getNum());
+        values.put(Table.StudentColumns.PERIOD, s.getPeriod());
+        values.put(Table.StudentColumns.GRADE, s.getGrade());
+        values.put(Table.StudentColumns.TYPE, s.getType());
+        values.put(Table.StudentColumns.PLACE, s.getPlace());
+        values.put(Table.StudentColumns.TRAIN_DATE, s.getTrainDate());
+        values.put(Table.StudentColumns.MODIFY_TIME, s.getModifyDateTime());
+        return db.update(Table.STUDENT_TABLE, values,
+                Table.StudentColumns.ID + "=?", new String[] { s.getId() + "" });
     }
 
     public List<Map<String,Object>> listAll() {
 
         List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.query(TableContanst.STUDENT_TABLE, null, null, null,
-                null, null, TableContanst.StudentColumns.MODIFY_TIME+" desc");
+        Cursor cursor = db.query(Table.STUDENT_TABLE, null, null, null,
+                null, null, Table.StudentColumns.MODIFY_TIME+" desc");
 
         while(cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<String, Object>(8);
-            map.put(TableContanst.StudentColumns.ID, cursor.getInt(cursor.getColumnIndex(TableContanst.StudentColumns.ID)));
-            map.put(TableContanst.StudentColumns.NAME, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.NAME)));
-            map.put(TableContanst.StudentColumns.NUM, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.NUM)));
-            map.put(TableContanst.StudentColumns.PERIOD, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.PERIOD)));
-            map.put(TableContanst.StudentColumns.GRADE, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.GRADE)));
-            map.put(TableContanst.StudentColumns.TYPE, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.TYPE)));
-            map.put(TableContanst.StudentColumns.PLACE, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.PLACE)));
-            map.put(TableContanst.StudentColumns.TRAIN_DATE, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.TRAIN_DATE)));
-            map.put(TableContanst.StudentColumns.MODIFY_TIME, cursor.getString(cursor.getColumnIndex(TableContanst.StudentColumns.MODIFY_TIME)));
+            map.put(Table.StudentColumns.ID, cursor.getInt(cursor.getColumnIndex(Table.StudentColumns.ID)));
+            map.put(Table.StudentColumns.NAME, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.NAME)));
+            map.put(Table.StudentColumns.NUM, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.NUM)));
+            map.put(Table.StudentColumns.PERIOD, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.PERIOD)));
+            map.put(Table.StudentColumns.GRADE, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.GRADE)));
+            map.put(Table.StudentColumns.TYPE, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.TYPE)));
+            map.put(Table.StudentColumns.PLACE, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.PLACE)));
+            map.put(Table.StudentColumns.TRAIN_DATE, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.TRAIN_DATE)));
+            map.put(Table.StudentColumns.MODIFY_TIME, cursor.getString(cursor.getColumnIndex(Table.StudentColumns.MODIFY_TIME)));
             data.add(map);
         }
         return data;
     }
 
     public Cursor findSC(String name){
-        Cursor cursor = dbHelper.getWritableDatabase().query(TableContanst.STUDENT_TABLE,  null, "name like ?",
+        Cursor cursor = dbHelper.getWritableDatabase().query(Table.STUDENT_TABLE,  null, "name like ?",
                 new String[] { "%" + name + "%" }, null, null, null,null);
         return cursor;      }
 

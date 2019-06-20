@@ -21,7 +21,7 @@ public class SCDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("CREATE TABLE "
-                + TableContanst.STUDENT_TABLE + "(_id Integer primary key AUTOINCREMENT,"
+                + Table.STUDENT_TABLE + "(_id Integer primary key AUTOINCREMENT,"
                 + "name char,num char, period char, grade char, type char, place char,train_date date, "
                 + "modify_time DATETIME)");     }
 

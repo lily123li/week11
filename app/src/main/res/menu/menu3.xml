@@ -6,7 +6,7 @@
         <item
             android:id="@+id/student"
             android:icon="@drawable/timg2"
-            android:title="个人中心"
+            android:title="进入系统"
             app:showAsAction="never" />
         <item
             android:id="@+id/activity"

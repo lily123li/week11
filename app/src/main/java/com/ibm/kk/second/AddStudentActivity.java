@@ -44,7 +44,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_student);
+        setContentView(R.layout.add_sc);
 
         idText = (TextView) findViewById(R.id.tv_pro_id);
         nameText = (EditText) findViewById(R.id.et_name);
@@ -72,7 +72,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     private void checkIsAddStudent() {
         Intent intent = getIntent();
         //Serializable接口传递对象
-        Serializable serial = intent.getSerializableExtra(TableContanst.STUDENT_TABLE);
+        Serializable serial = intent.getSerializableExtra(Table.STUDENT_TABLE);
         if (serial == null) {
             isAdd = true;
             //设置为当前日期
@@ -250,7 +250,7 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
     protected Dialog onCreateDialog(int id) {
         switch (id) {
             case DATE_PICKER_ID:
-                return new DatePickerDialog(this, onDateSetListener, 2011, 8, 14);
+                return new DatePickerDialog(this, onDateSetListener, 2019, 6, 1);
         }
         return null;
     }

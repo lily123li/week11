@@ -6,44 +6,48 @@
     android:layout_weight="1"
     >
 
-    <TextView android:id="@+id/tv_pro_id"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/tv_pro_id"
+        android:layout_width="1dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
         android:layout_weight="1" />
 
-    <TextView android:id="@+id/tv_pro_name"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/tv_pro_name"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <TextView android:id="@+id/tv_pro_num"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/tv_pro_num"
+        android:layout_width="0.5dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <TextView android:id="@+id/tv_pro_period"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/tv_pro_period"
+        android:layout_width="0.5dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <TextView android:id="@+id/tv_pro_grade"
-        android:layout_width="fill_parent"
+        android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <TextView android:id="@+id/tv_pro_type"
-        android:layout_width="fill_parent"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <TextView android:id="@+id/tv_pro_place"
-        android:layout_width="fill_parent"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <TextView android:id="@+id/tv_pro_traindate"
-        android:layout_width="fill_parent"
+        android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 

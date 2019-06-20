@@ -120,18 +120,18 @@ public class StudentListActivity extends ListActivity implements AdapterView.OnC
         SCDBHelper scDBHelper = new SCDBHelper(
                 StudentListActivity.this);
         SQLiteDatabase database = scDBHelper.getWritableDatabase();
-        cursor = database.query(TableContanst.STUDENT_TABLE, null, null, null,
-                null, null, TableContanst.StudentColumns.MODIFY_TIME + " desc");
+        cursor = database.query(Table.STUDENT_TABLE, null, null, null,
+                null, null, Table.StudentColumns.MODIFY_TIME + " desc");
         startManagingCursor(cursor);
         adapter = new SimpleCursorAdapter(this, R.layout.sc_list_item,
-                cursor, new String[] { TableContanst.StudentColumns.ID,
-                TableContanst.StudentColumns.NAME,
-                TableContanst.StudentColumns.NUM,
-                TableContanst.StudentColumns.PERIOD,
-                TableContanst.StudentColumns.GRADE,
-                TableContanst.StudentColumns.TYPE,
-                TableContanst.StudentColumns.PLACE,
-                TableContanst.StudentColumns.TRAIN_DATE }, new int[] {
+                cursor, new String[] { Table.StudentColumns.ID,
+                Table.StudentColumns.NAME,
+                Table.StudentColumns.NUM,
+                Table.StudentColumns.PERIOD,
+                Table.StudentColumns.GRADE,
+                Table.StudentColumns.TYPE,
+                Table.StudentColumns.PLACE,
+                Table.StudentColumns.TRAIN_DATE }, new int[] {
                 R.id.tv_pro_id, R.id.tv_pro_name, R.id.tv_pro_num,R.id.tv_pro_period,
                 R.id.tv_pro_grade, R.id.tv_pro_type, R.id.tv_pro_place,
                 R.id.tv_pro_traindate });
