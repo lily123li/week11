@@ -38,7 +38,7 @@ public class AcademyActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_academy);
 
-        button = (Button) this.findViewById(R.id.aca_button2);
+        button = (Button) this.findViewById(R.id.aca_save);
         button.setOnClickListener(this);
 
         Intent intent = getIntent();

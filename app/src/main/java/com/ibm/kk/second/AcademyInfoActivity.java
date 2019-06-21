@@ -20,8 +20,8 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
     private TextView aca_code;
     private TextView aca_address;
     private TextView aca_email;
-    private Button button;
-    private Button button4;
+    private Button button1;
+    private Button button2;
     String aca_id2;
     String aca_name2;
     String aca_phone2;
@@ -51,10 +51,10 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
         aca_address2 = sharedPreferences.getString("aca_address", "通博楼B座");
         aca_email2 = sharedPreferences.getString("aca_email", "xxzz@swufe.edu.cn");
 
-        button = (Button)this.findViewById(R.id.aca_button1);
-        button.setOnClickListener(this);
-        button4 = (Button)this.findViewById(R.id.button4);
-        button4.setOnClickListener(this);
+        button1 = (Button)this.findViewById(R.id.aca_return);
+        button1.setOnClickListener(this);
+        button2 = (Button)this.findViewById(R.id.aca_config);
+        button2.setOnClickListener(this);
 
         show();
     }
@@ -99,12 +99,12 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onClick(View btn) {
 
-        if (btn.getId() == R.id.aca_button1) {
+        if (btn.getId() == R.id.aca_save) {
             Intent intent1 = new Intent(this,FrameActivity.class);
             startActivity(intent1);
 
         } else {
-            Intent intent2 = new Intent(this, AcademyActivity.class);
+            Intent intent2 = new Intent(this, FuncFragment.class);
             intent2.putExtra("aca_id", aca_id2);
             intent2.putExtra("aca_name", aca_name2);
             intent2.putExtra("aca_phone", aca_phone2);

@@ -49,10 +49,10 @@ public class PageActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.student){
-            startActivity(new Intent(PageActivity.this, FrameActivity.class));
+        if(item.getItemId()==R.id.search_list){
+            startActivity(new Intent(PageActivity.this, Search.class));
         }
-        if(item.getItemId()==R.id.activity){
+        if(item.getItemId()==R.id.sc_list){
             startActivity(new Intent(PageActivity.this, StudentListActivity.class));
         }
         if(item.getItemId()==R.id.open_list){
