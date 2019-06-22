@@ -87,7 +87,7 @@ public class StudentActivity extends AppCompatActivity implements AdapterView.On
         intent.putExtras(bdl);
         setResult(2,intent);
         //返回到调用页面
-        finish();//结束当前页面，回到调用页面
+        finish();
 
     }
 }

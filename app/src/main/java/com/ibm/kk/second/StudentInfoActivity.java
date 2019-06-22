@@ -44,7 +44,7 @@ public class StudentInfoActivity extends AppCompatActivity implements AdapterVie
         stu_email = (TextView) findViewById(R.id.et_code6);
         stu_major = (TextView) findViewById(R.id.et_major6);
 
-        //获取SP里面保存的数据
+
         SharedPreferences sharedPreferences = getSharedPreferences("mystu", Activity.MODE_PRIVATE);
         stu_id2 = sharedPreferences.getString("stu_id", "41724026");
         stu_name2 = sharedPreferences.getString("stu_name", "Jenny");
