@@ -99,12 +99,12 @@ public class AcademyInfoActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onClick(View btn) {
 
-        if (btn.getId() == R.id.aca_save) {
+        if (btn.getId() == R.id.aca_return) {
             Intent intent1 = new Intent(this,FrameActivity.class);
             startActivity(intent1);
 
         } else {
-            Intent intent2 = new Intent(this, FuncFragment.class);
+            Intent intent2 = new Intent(this, AcademyActivity.class);
             intent2.putExtra("aca_id", aca_id2);
             intent2.putExtra("aca_name", aca_name2);
             intent2.putExtra("aca_phone", aca_phone2);

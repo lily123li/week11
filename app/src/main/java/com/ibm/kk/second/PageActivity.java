@@ -18,6 +18,7 @@ import java.util.List;
 public class PageActivity extends AppCompatActivity implements
         AdapterView.OnClickListener{
 
+    private ImageButton btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class PageActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_page);
 
 
-        ImageButton btn1 = (ImageButton)findViewById(R.id.entry);
+        btn1 = (ImageButton)findViewById(R.id.entry);
         btn1.setOnClickListener(this);
 
         List<String> list1 = new ArrayList<String>();
@@ -36,8 +37,11 @@ public class PageActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onClick(View v) {
-        startActivity(new Intent(PageActivity.this, FrameActivity.class));
+    public void onClick(View btn) {
+
+            Intent list1 = new Intent(PageActivity.this, FrameActivity.class);
+            startActivity(list1);
+
 
     }
 
