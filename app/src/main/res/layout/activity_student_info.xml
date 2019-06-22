@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcademyInfoActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageButton
+            android:id="@+id/student1"
+            android:layout_width="212dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="0dp"
+            android:background="@mipmap/title2"
+            android:foregroundGravity="center" />
+
+        <TextView
+            android:id="@+id/stu_id"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="120sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="学号："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_id6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="120sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_id"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_name"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_id"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="姓名："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_name6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_alignTop="@id/stu_name"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_name"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_phone"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_name"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="电话："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_phone6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_alignTop="@id/stu_phone"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|left"
+            android:layout_toRightOf="@id/stu_phone"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_email"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_phone"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="邮箱："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_email6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_alignTop="@id/stu_email"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_email"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_address"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_email"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="宿舍："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_address6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:textSize="16sp"
+            android:layout_alignTop="@id/stu_address"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_address"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_code"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_address"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="年级："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_code6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_alignTop="@id/stu_code"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_code"
+            android:gravity="center_vertical|left"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/stu_major"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/stu_code"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical|right"
+            android:text="专业："
+            android:textColor="@color/colorblack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/et_major6"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_alignTop="@id/stu_major"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/stu_code"
+            android:gravity="center_vertical|left"
+            android:textSize="16sp"
+            android:paddingLeft="20dp" />
+
+        <Button
+            android:id="@+id/stu_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginBottom="14dp"
+            android:text="返回" />
+
+        <Button
+            android:id="@+id/stu_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="14dp"
+            android:text="修改" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
