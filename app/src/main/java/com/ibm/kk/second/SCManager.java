@@ -85,6 +85,7 @@ public class SCManager {//对数据库进行管理，对外提供方法
                 new String[] { "%" + name + "%" }, null, null, null,null);
         return cursor;      }
 
+
     public SCItem getStudentFromView(View view, long id) {
         TextView nameView = (TextView) view.findViewById(R.id.tv_pro_name);
         TextView numView = (TextView) view.findViewById(R.id.tv_pro_num);
