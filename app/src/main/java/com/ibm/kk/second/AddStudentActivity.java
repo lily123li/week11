@@ -120,7 +120,6 @@ public class AddStudentActivity extends AppCompatActivity implements AdapterView
         periodText.setText(period + "");
         placeText.setText(place + "");
         dataText.setText(data + "");
-        setTitle("学员信息更新");
         restoreButton.setText("更新");
     }
 
